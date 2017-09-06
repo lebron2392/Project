@@ -2,7 +2,6 @@
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
 PartsList=Ricerca Ordini di Lavoro
-
 part_code=Codice
 description=Descrizione
 source=Origine
