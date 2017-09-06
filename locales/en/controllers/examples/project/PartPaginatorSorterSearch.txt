@@ -1,10 +1,10 @@
 #Comment: Loads translations defined
 #Load:locales/en/controllers/examples/project/PartList.txt
 
-SearchFormTitle=Ricerca Ordine di Lavoro
-PartCodeLabel=ID Operaio
-PartCodePlaceholder=Inserire un ID
+SearchFormTitle=Work Order Searcher
+PartCodeLabel=Worker ID
+PartCodePlaceholder=Insert an ID
 Data=Data
 
-SearchSubmitCaption=Cerca
+SearchSubmitCaption=Search
 SearchResetCaption=Reset
