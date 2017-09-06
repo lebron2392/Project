@@ -34,8 +34,8 @@ class PartPaginatorSorterSearch extends PartPaginatorSorter
         $searcher->setName("ricerca");
 
         // Creates filters: table field, form input, operators into query, type
-        $searcher->addFilter("id","s_id","=","string");
-        $searcher->addFilter("date","s_date","=","date");
+        $searcher->addFilter("IDOperaio","s_id","=","string");
+        $searcher->addFilter("Giorno","s_date","=","string");
 
         // Sets form name (tpl variable)
         $searcher->setFormName("search_form", $searcher->getName());

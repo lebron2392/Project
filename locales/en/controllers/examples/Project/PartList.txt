@@ -1,0 +1,7 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/cms/Localization.txt
+
+PartsList=Search Work Order
+part_code=ID Work Order
+description=Date
+source=ID Worker

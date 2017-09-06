@@ -23,7 +23,7 @@ class NavigationBar extends View
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/examples/cms/navigation_bar";
+            $tplName = "/examples/cms/navigation_bar_progetto";
         parent::__construct($tplName);
     }
     

@@ -19,16 +19,12 @@ class PartPaginator extends Model
         parent::__construct();
         $this->sql =
 <<<SQL
-            SELECT  
-              ID,
-              IDODL,
-              Operazione,
-              OraInizio,
-              OraFine,
-              QuantitaProgrammata,
-              QuantitaRealizzata              
+            SELECT
+               ID,
+               Giorno,
+               IDOperaio
             FROM 
-              task
+              odl
 SQL;
         // Also this
         // $this->sql = "SELECT t.* FROM part t";

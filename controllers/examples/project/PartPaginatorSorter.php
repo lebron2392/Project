@@ -51,13 +51,8 @@ class PartPaginatorSorter extends Controller
 
         // Sort
         $sorterID = $this->makeSoterPartCode();
-        $sorterIDODL = $this->makeSoterDescription();
-        $sorterOperazione = $this->makeSoterSource();
-        $sorterOraInizio = $this->makeSoterSourceLeadTime();
-        $sorterOraFine =$this->makeSoterPartTypeCode();
-        $soterQuantitaProgrammata = $this->makeSoterMeasurementUnitCode();
-        $sorterQuantitaRealizzata = $this->makeSoterPartCategoryCode();
-
+        $sorterGiorno = $this->makeSoterDescription();
+        $sorterIDOperaio = $this->makeSoterSource();
 
         // Paginate
         $paginator = $this->makePaginator();
@@ -69,12 +64,8 @@ class PartPaginatorSorter extends Controller
         // Finally binding
         // Sortes components
         $this->bindComponent($sorterID);
-        $this->bindComponent($sorterIDODL);
-        $this->bindComponent($sorterOperazione);
-        $this->bindComponent($sorterOraInizio);
-        $this->bindComponent($sorterOraFine);
-        $this->bindComponent($soterQuantitaProgrammata);
-        $this->bindComponent($sorterQuantitaRealizzata);
+        $this->bindComponent($sorterGiorno);
+        $this->bindComponent($sorterIDOperaio);
 
         // Paginator component
         $this->bindComponent($paginator);
@@ -128,8 +119,8 @@ class PartPaginatorSorter extends Controller
     protected function makeSoterDescription()
     {
         $sorterIDODL = new SorterBootstrap();
-        $sorterIDODL->setName("IDODL");
-        $sorterIDODL->field = "IDODL";
+        $sorterIDODL->setName("Giorno");
+        $sorterIDODL->field = "Giorno";
         $sorterIDODL->caption = "{RES:description}";
         $sorterIDODL->init($this->model);
         return $sorterIDODL;
@@ -142,69 +133,12 @@ class PartPaginatorSorter extends Controller
     protected function makeSoterSource()
     {
         $sorterOperazione = new SorterBootstrap();
-        $sorterOperazione->setName("Operazione");
-        $sorterOperazione->field = "Operazione";
+        $sorterOperazione->setName("IDOperaio");
+        $sorterOperazione->field = "IDOperaio";
         $sorterOperazione->caption = "{RES:source}";
         $sorterOperazione->init($this->model);
         return $sorterOperazione;
     }
-
-    /**
-     * Make sorte for source_lead_time field
-     * @return SorterBootstrap
-     */
-    protected function makeSoterSourceLeadTime()
-    {
-        $sorterOraInizio = new SorterBootstrap();
-        $sorterOraInizio->setName("OraInizio");
-        $sorterOraInizio->field = "OraInizio";
-        $sorterOraInizio->caption = "{RES:source_lead_time}";
-        $sorterOraInizio->init($this->model);
-        return $sorterOraInizio;
-    }
-
-    /**
-     * Make sorte for measurement_unit_code field
-     * @return SorterBootstrap
-     */
-    protected function makeSoterMeasurementUnitCode()
-    {
-        $sorterOraFine = new SorterBootstrap();
-        $sorterOraFine->setName("OraFine");
-        $sorterOraFine->field = "OraFine";
-        $sorterOraFine->caption = "{RES:measurement_unit_code}";
-        $sorterOraFine->init($this->model);
-        return $sorterOraFine;
-    }
-
-    /**
-     * Make sorte for part_type_code field
-     * @return SorterBootstrap
-     */
-    protected function makeSoterPartTypeCode()
-    {
-        $soterQuantitaProgrammata = new SorterBootstrap();
-        $soterQuantitaProgrammata->setName("QuantitaProgrammata");
-        $soterQuantitaProgrammata->field = "QuantitaProgrammata";
-        $soterQuantitaProgrammata->caption = "{RES:part_type_code}";
-        $soterQuantitaProgrammata->init($this->model);
-        return $soterQuantitaProgrammata;
-    }
-
-    /**
-     * Make sorte for part_category_code field
-     * @return SorterBootstrap
-     */
-    protected function makeSoterPartCategoryCode()
-    {
-        $sorterQuantitaRealizzata = new SorterBootstrap();
-        $sorterQuantitaRealizzata->setName("QuantitaRealizzata");
-        $sorterQuantitaRealizzata->field = "QuantitaRealizzata";
-        $sorterQuantitaRealizzata->caption = "{RES:part_category_code}";
-        $sorterQuantitaRealizzata->init($this->model);
-        return $sorterQuantitaRealizzata;
-    }
-
 
     /**
     * Inizialize the View by loading static design of /examples/db/part_paginator.html.tpl

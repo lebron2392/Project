@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Listing, paginating, sorting and searching</title>
+    <title>Project</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap core CSS -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,39 +30,48 @@
         <form class="form-horizontal" method="post" name="{search_form}">
             <div class="panel-body">
 
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label text-right"><label>{RES:PartCodeLabel}</label></label>
-                    <div class="col-sm-10">
-                        <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:PartCodePlaceholder}" class="form-control">
+                <div class="form-group col-sm-12">
+                    <div class="col-sm-4 control-label">
+                        <label class="text-danger">{RES:IDOperaioLabel}</label>
+                    </div>
+
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-th" aria-hidden="true"></i>
+                        </div>
+                        <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:IDOperaioPlaceholder}" class="form-control">
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label text-right"><label>{RES:Data}</label></label>
-                    <div class="col-sm-10">
-                        <div class="form-row show-inputbtns">
-                            <input type="date"  value="{s_date}" name="s_date" id="s_date">
+
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-4 control-label">
+                            <label class="text-danger">{RES:Date}</label>
+                        </div>
+
+                        <div class="col-sm-6 input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="form-row show-inputbtns">
+                                <input type="text"  value="{s_date}" name="s_date" id="s_date" placeholder="{RES:DatePlaceholder}" class="form-control">
+                            </div>
                         </div>
                     </div>
-                </div>
 
             </div>
 
-
             <div class="panel-footer">
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">&nbsp;</label>
+                <div class="form-group text-center">
+                    <label class="col-sm-1 control-label"></label>
                     <div class="col-sm-10">
                         <input class = "btn btn-primary"  type="submit" name="{search_submit}" value="{RES:SearchSubmitCaption}"> &nbsp;
                         <input class = "btn btn-success"  type="submit" name="{search_reset}"  value="{RES:SearchResetCaption}">
                     </div>
-
                 </div>
 
             </div>
-
         </form>
-
     </div>
 
 
@@ -71,24 +81,16 @@
             <thead>
             <tr>
                 <th>{SorterBootstrap:ID}</th>
-                <th>{SorterBootstrap:IDODL}</th>
-                <th>{SorterBootstrap:Operazione}</th>
-                <th>{SorterBootstrap:OraInizio}</th>
-                <th>{SorterBootstrap:OraFine}</th>
-                <th>{SorterBootstrap:QuantitaProgrammata}</th>
-                <th>{SorterBootstrap:QuantitaRealizzata}</th>
+                <th>{SorterBootstrap:Giorno}</th>
+                <th>{SorterBootstrap:IDOperaio}</th>
             </tr>
             </thead>
             <tbody>
             <!-- BEGIN Parts -->
             <tr>
                 <td>{ID}</td>
-                <td>{IDODL}</td>
-                <td>{Operazione}</td>
-                <td>{OraInizio}</td>
-                <td>{OraFine}</td>
-                <td>{QuantitaProgrammata}</td>
-                <td>{QuantitaRealizzata}</td>
+                <td>{Giorno}</td>
+                <td>{IDOperaio}</td>
             </tr>
             <!-- END Parts -->
             </tbody>

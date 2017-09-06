@@ -17,12 +17,8 @@ class PartList extends View
         $this->openBlock("Parts");
         while ($part = $resultset->fetch_object()) {
             $this->setVar("ID",$part->ID);
-            $this->setVar("IDODL",$part->IDODL);
-            $this->setVar("Operazione",$part->operazione);
-            $this->setVar("OraInizio",$part->ora_inizio);
-            $this->setVar("OraFine",$part->ora_fine);
-            $this->setVar("QuantitaProgrammata",$part->quantita_programmata);
-            $this->setVar("QuantitaRealizzata",$part->quantita_realizzata);
+            $this->setVar("Giorno",$part->Giorno);
+            $this->setVar("IDOperaio",$part->IDOperaio);
             $this->parseCurrentBlock();
         }
         $this->setBlock();

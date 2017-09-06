@@ -2,9 +2,9 @@
 #Load:locales/it-it/controllers/examples/project/PartList.txt
 
 SearchFormTitle=Ricerca Ordine di Lavoro
-PartCodeLabel=ID Operaio
-PartCodePlaceholder=Inserire un ID
-Data=Data
-
+IDOperaioLabel=ID Operaio
+IDOperaioPlaceholder=Inserire un ID
+Date=Data
+DatePlaceholder=Inserire una data
 SearchSubmitCaption=Cerca
 SearchResetCaption=Reset
