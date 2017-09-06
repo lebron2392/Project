@@ -15,9 +15,9 @@
     <![endif]-->
 </head>
 <body>
-{Controller:examples\cms\NavigationBar}
-<div class="container">
-    <h1>{RES:Title}</h1>
+<center><h1>{RES:Title}</h1></center>
+    <div class="well">
+        <ol class="h4">
     <div class="table table-responsive">
         <table class="table table-bordered">
             <thead>
@@ -55,7 +55,7 @@
             </tfoot>
         </table> 
     </div>
-
+    </ol>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

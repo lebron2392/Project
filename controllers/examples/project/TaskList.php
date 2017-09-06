@@ -32,8 +32,8 @@ class TaskList extends Controller
         $this->view = empty($view) ? $this->getView() : $view;
         $this->model = empty($model) ? $this->getModel() : $model;
         parent::__construct($this->view,$this->model);
-        $navigation = new NavigationBar();
-        $this->bindController($navigation);
+        //$navigation = new NavigationBar();
+        //$this->bindController($navigation);
     }
 
 
