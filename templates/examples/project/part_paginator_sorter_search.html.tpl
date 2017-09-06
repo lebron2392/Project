@@ -54,7 +54,7 @@
                                 <i class="fa fa-file-text-o" aria-hidden="true"></i>
                             </div>
                             <div class="form-row show-inputbtns">
-                                <input type="text"  value="{s_date}" name="s_date" id="s_date" placeholder="{RES:DatePlaceholder}" class="form-control">
+                                <input type="date"  value="{s_date}" name="s_date" id="s_date">
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
             <tbody>
             <!-- BEGIN Parts -->
             <tr>
-                <td>{ID}</td>
+                <td><a href="part_record/open/{ID}">{ID}</a></td>
                 <td>{Giorno}</td>
                 <td>{IDOperaio}</td>
             </tr>

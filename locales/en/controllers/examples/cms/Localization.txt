@@ -1,16 +1,14 @@
 #Comment:Translations for controller Localization
-ProjectName=Project SII
+ProjectName=Employee Timesheet
 Contacts=Contact us
 Setting=Settings
 Menu=Menu
-LanguageSettings=Language settings
+LanguageSettings=Language
 English=English
 Italian=Italian
-GuiSettings=GUI settings
-LookAndFeel=Look and Feel
-Exit=Exit (TOC)
+Exit=Exit
 InfoMessage=Click Settings->Language settings to change language. Traslations are placed into "locales" folder.
 
-A=link A
-B=link B
-C=link C
+A=link 1
+B=link 2
+C=link 3
