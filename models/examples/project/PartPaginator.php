@@ -19,12 +19,8 @@ class PartPaginator extends Model
         parent::__construct();
         $this->sql =
 <<<SQL
-            SELECT
-               ID,
-               Giorno,
-               IDOperaio
-            FROM 
-              odl
+            SELECT ID, Giorno, IDOperaio
+            FROM odl
 SQL;
         // Also this
         // $this->sql = "SELECT t.* FROM part t";

@@ -140,6 +140,15 @@ class PartPaginatorSorter extends Controller
         return $sorterOperazione;
     }
 
+
+    public function open($pk)
+    {
+        $_GET["part_code"] = $pk;
+        $this->autorun();
+        $this->render();
+    }
+
+
     /**
     * Inizialize the View by loading static design of /examples/db/part_paginator.html.tpl
     * managed by views\examples\db\PartPaginator class

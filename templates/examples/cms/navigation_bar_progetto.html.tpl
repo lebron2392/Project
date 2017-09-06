@@ -37,5 +37,3 @@
         </div>
     </div>
 </nav>
-
-<li role="separator" class="divider"></li>

@@ -1,0 +1,15 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/cms/Localization.txt
+
+Title=Scheda Attivit&agrave
+IDTask=IDTask
+OraInizio=OraInizio
+OraFine=OraFine
+Operazione=Operazione
+Stato=Stato
+QuantitaProgrammata=QuantitaProgrammata
+Edificio=Edificio
+Reparto=Reparto
+Macchinario=Macchinario
+AllParts=Fine Scheda Attivit&agrave
+Back=Indietro

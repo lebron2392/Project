@@ -20,7 +20,6 @@
 <div class="container">
     <h1>{RES:PartsList}</h1>
 
-
     <div id="search-panel" class="panel panel-primary collapse in" aria-expanded="true">
         <div class="panel-heading">
             <h3 class="panel-title">{RES:SearchFormTitle}</h3>
@@ -88,7 +87,7 @@
             <tbody>
             <!-- BEGIN Parts -->
             <tr>
-                <td><a href="part_record/open/{ID}">{ID}</a></td>
+                <td><a href="task_list?id={ID}">{ID}</a></td>
                 <td>{Giorno}</td>
                 <td>{IDOperaio}</td>
             </tr>

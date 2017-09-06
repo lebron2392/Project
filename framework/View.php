@@ -257,6 +257,7 @@ class View
         $blockWithContent = $begin . $content . $end;
 
         if (!empty($content)) {
+            //$this->tpl = str_replace($var, $blockWithContent, $this->tpl);
             $this->tpl = str_replace($var, $blockWithContent, $this->tpl);
         }
 

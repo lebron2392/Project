@@ -7,7 +7,6 @@ LanguageSettings=Language
 English=English
 Italian=Italian
 Exit=Exit
-InfoMessage=Click Settings->Language settings to change language. Traslations are placed into "locales" folder.
 
 A=link 1
 B=link 2

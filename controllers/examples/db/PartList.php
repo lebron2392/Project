@@ -1,6 +1,6 @@
 <?php
 /**
- * Class PartList
+ * Class TaskList
  *
  * {ControllerResponsability}
  *
@@ -13,7 +13,7 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 
-use models\examples\db\PartList as PartListModel;
+use models\examples\db\TaskList as PartListModel;
 use views\examples\db\PartList as PartListView;
 use controllers\examples\cms\NavigationBar;
 use framework\components\DataRepeater;
