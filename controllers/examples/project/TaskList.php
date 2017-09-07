@@ -21,17 +21,12 @@ use framework\components\DataRepeater;
 
 class TaskList extends Controller
 {
-    /**
-    * Object constructor.
-    *
-    * @param View $view
-    * @param Model $mode
-    */
-    public function __construct(View $view=null, Model $model=null)
+
+    public function __construct(View $view = null, Model $model = null)
     {
         $this->view = empty($view) ? $this->getView() : $view;
         $this->model = empty($model) ? $this->getModel() : $model;
-        parent::__construct($this->view,$this->model);
+        parent::__construct($this->view, $this->model);
         //$navigation = new NavigationBar();
         //$this->bindController($navigation);
     }
@@ -47,14 +42,14 @@ class TaskList extends Controller
      */
     public function useRepeater()
     {
-        $parts = new DataRepeater($this->view,$this->model,"Parts",null);
+        $parts = new DataRepeater($this->view, $this->model, "Parts", null);
         $this->bindComponent($parts);
         $this->render();
     }
 
     /**
-    * Inizializes the View
-    */
+     * Inizializes the View
+     */
     public function getView()
     {
         $view = new PartListView("/examples/project/task_list");
@@ -62,18 +57,12 @@ class TaskList extends Controller
     }
 
     /**
-    * Inizializes the Model
-    */
+     * Inizializes the Model
+     */
     public function getModel()
     {
         $model = new PartListModel();
         return $model;
     }
 
-    public function open($pk)
-    {
-        $_GET["part_code"] = $pk;
-        $this->autorun();
-        $this->render();
-    }
 }

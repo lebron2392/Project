@@ -2,12 +2,12 @@
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
 Title=Scheda Attivit&agrave
-IDTask=IDTask
-OraInizio=OraInizio
-OraFine=OraFine
+IDTask=ID Task
+OraInizio=Ora Inizio
+OraFine=Ora Fine
 Operazione=Operazione
 Stato=Stato
-QuantitaProgrammata=QuantitaProgrammata
+QuantitaProgrammata=Quantit&agrave Programmata
 Edificio=Edificio
 Reparto=Reparto
 Macchinario=Macchinario

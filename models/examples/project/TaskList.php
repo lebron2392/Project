@@ -10,11 +10,15 @@ class TaskList extends Model
     {
         parent::__construct();
         $pk = $_GET['id'];
-        $this->sql = "SELECT Task.ID as IDTask, Task.OraInizio as OraInizio, Task.OraFine as OraFine,
-                             Task.Operazione as Operazione, Task.Stato as Stato, Task.QuantitaProgrammata as QuantitaProgrammata,
-                             Task.Edificio as Edificio, Task.Reparto as Reparto, Task.Macchinario as Macchinario
-                      FROM Task
-                      WHERE Task.IDODL=$pk";
+
+        $this->sql =
+<<<SQL
+            SELECT Task.ID as IDTask, Task.OraInizio as OraInizio, Task.OraFine as OraFine,
+                              Task.Operazione as Operazione, Task.Stato as Stato, Task.QuantitaProgrammata as QuantitaProgrammata,
+                              Task.Edificio as Edificio, Task.Reparto as Reparto, Task.Macchinario as Macchinario
+            FROM Task
+            WHERE Task.IDODL=$pk
+SQL;
         $this->updateResultSet();
     }
 
