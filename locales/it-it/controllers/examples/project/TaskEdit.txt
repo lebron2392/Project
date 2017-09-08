@@ -1,0 +1,23 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/db/PartPaginatorSorterSearchExternal.txt
+Title=Titolo
+Form=Gestione Task:
+TaskID= Identificativo Task
+start= Ora Inizio
+finish= Ora Fine
+operation= operazione
+state= STATO
+select_value= seleziona un valore
+scheduled= Quantità Programmata
+produced= Quantità Realizzata
+log= log impiegato
+
+measurement_unit_code_select_value=Select measurment code
+source_select_value=Select part source
+part_type_code_select_value=Select part type
+part_category_code_value=Select part category
+errormsg=There were errors:
+New_Record=Add a new Part record
+Edit_Record=Edit Part record. Part code
+errormsg = There were the following errors:
+AddNewPart= Add a new part

@@ -15,7 +15,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{RES:Menu} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://www.google.com">{RES:A}</a></li>
+                        <li><a href="http://localhost/SIIproject/examples/project/part_paginator_sorter_search">{RES:A}</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="http://www.google.com">{RES:B}</a></li>
                         <li role="separator" class="divider"></li>

@@ -8,6 +8,6 @@ English=English
 Italian=Italian
 Exit=Esci
 
-A=link 1
+A=Cerca Scheda Attivit&agrave Impiegato
 B=link 2
 C=link 3
