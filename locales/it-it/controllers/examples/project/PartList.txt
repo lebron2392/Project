@@ -2,6 +2,6 @@
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
 PartsList=Ricerca Ordini di Lavoro
-part_code=ID OdL
-description=Data
-source=ID Operaio
+ID=ID OdL
+Giorno=Data
+IDOperaio=ID Operaio

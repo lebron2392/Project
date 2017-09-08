@@ -2,6 +2,6 @@
 #Load:locales/en/controllers/examples/cms/Localization.txt
 
 PartsList=Search Work Order
-part_code=ID Work Order
-description=Date
-source=ID Worker
+ID=ID Work Order
+Giorno=Date
+IDOperaio=ID Worker

@@ -42,9 +42,9 @@ class PartPaginatorSorter extends Controller
         // (same order of db query processor)
 
         // Sort
-        $sorterID = $this->makeSoterPartCode();
-        $sorterGiorno = $this->makeSoterDescription();
-        $sorterIDOperaio = $this->makeSoterSource();
+        $sorterID = $this->makeSoterID();
+        $sorterGiorno = $this->makeSoterGiorno();
+        $sorterIDOperaio = $this->makeSoterIDOperaio();
 
         // Paginate
         $paginator = $this->makePaginator();
@@ -94,12 +94,12 @@ class PartPaginatorSorter extends Controller
      * Makes sorter for part_code field
      * @return SorterBootstrap
      */
-    protected function makeSoterPartCode()
+    protected function makeSoterID()
     {
         $sorterID = new SorterBootstrap();
         $sorterID->setName("ID");
         $sorterID->field = "ID";
-        $sorterID->caption = "{RES:part_code}";
+        $sorterID->caption = "{RES:ID}";
         $sorterID->init($this->model);
         return $sorterID;
     }
@@ -108,12 +108,12 @@ class PartPaginatorSorter extends Controller
      * Make sorter for description field
      * @return SorterBootstrap
      */
-    protected function makeSoterDescription()
+    protected function makeSoterGiorno()
     {
         $sorterIDODL = new SorterBootstrap();
         $sorterIDODL->setName("Giorno");
         $sorterIDODL->field = "Giorno";
-        $sorterIDODL->caption = "{RES:description}";
+        $sorterIDODL->caption = "{RES:Giorno}";
         $sorterIDODL->init($this->model);
         return $sorterIDODL;
     }
@@ -122,12 +122,12 @@ class PartPaginatorSorter extends Controller
      * Make sorter for source field
      * @return SorterBootstrap
      */
-    protected function makeSoterSource()
+    protected function makeSoterIDOperaio()
     {
         $sorterOperazione = new SorterBootstrap();
         $sorterOperazione->setName("IDOperaio");
         $sorterOperazione->field = "IDOperaio";
-        $sorterOperazione->caption = "{RES:source}";
+        $sorterOperazione->caption = "{RES:IDOperaio}";
         $sorterOperazione->init($this->model);
         return $sorterOperazione;
     }
@@ -135,7 +135,7 @@ class PartPaginatorSorter extends Controller
 
     public function open($pk)
     {
-        $_GET["part_code"] = $pk;
+        $_GET["ID"] = $pk;
         $this->autorun();
         $this->render();
     }
