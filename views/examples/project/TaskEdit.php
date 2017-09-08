@@ -11,7 +11,7 @@
 namespace views\examples\project;
 
 use framework\View;
-use models\beans\BeanPart;
+use models\beans\BeanTask;
 
 class TaskEdit extends View
 {
@@ -32,26 +32,25 @@ class TaskEdit extends View
      * Update fiellds with bean data
      * @param BeanPart $bean
      */
-    public function setFieldsWithBeanData(BeanPart $bean)
+    public function setFieldsWithBeanData(BeanTask $bean)
     {
         // Switch form mode
-        if ($bean->getPartCode() == null) {
+        if ($bean->getId() == null) {
             $this->setVar("FormTitle", "{RES:Form}");
             $this->setVar("readonly","readonly");
         }else  {
-            $this->setVar("FormTitle", "{RES:Form}: ". $bean->getPartCode());
+            $this->setVar("FormTitle", "{RES:Form}: ". $bean->getId());
             $this->setVar("readonly","readonly");
         }
 
-        //$this->setVar("part_code",$bean->getPartCode());
-        $this->setVar("description",$bean->getDescription());
-        $this->setVar("source",$bean->getSource());
-        $this->setVar("source_lead_time",$bean->getSourceLeadTime());
-        $this->setVar("measurement_unit_code",$bean->getMeasurementUnitCode());
-        $this->setVar("part_type_code",$bean->getPartTypeCode());
-        $this->setVar("part_category_code",$bean->getPartCategoryCode());
-        //$this->setVar("wastage",$bean->getWastage());
-       // $this->setVar("bom_levels",$bean->getBomLevels());
+        $this->setVar("ID",$bean->getId());
+        $this->setVar("StartTime", $bean->getOrainizio());
+        $this->setVar("FinishTime",$bean->getOrafine());
+        $this->setVar("Operation",$bean->getOperazione());
+       // $this->setVar("Status",$bean->getStato());
+        $this->setVar("SQuantity",$bean->getQuantitaprogrammata());
+        //$this->setVar("PQuantity",$bean->getQuantitarealizzata());
+        //$this->setVar("Log",$bean->getErrorlog());
     }
 
 

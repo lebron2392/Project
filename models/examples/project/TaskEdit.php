@@ -13,7 +13,7 @@ namespace models\examples\project;
 use framework\Model;
 use views\examples\project\TaskEdit as PartRecordView;
 use framework\components\DataRepeater;
-use models\beans\BeanPart;
+use models\beans\BeanTask;
 
 class TaskEdit extends Model
 {
@@ -37,62 +37,20 @@ class TaskEdit extends Model
 
     }
 
-    /**
-     * Build select list values for Measurament Code by using a DataRepeater
-     *
-     * @param PartRecordView $view
-     */
-    public function makeMeausurementUnitCodeList(PartRecordView $view)
-    {
-        $measuramentList = new Model();
-        $measuramentList->sql= "SELECT measurement_unit_code, name FROM measurement_unit";
-        $measuramentList->updateResultSet();
-        $list = new DataRepeater($view,$measuramentList,"measurament_unit_code_list",null);
-        //$list->render();
-    }
-
-    /**
-     * Build select list values for Measurament Code by using a DataRepeater
-     *
-     * @param PartRecordView $view
-     */
-    public function makePartTypeCodeList(PartRecordView $view)
-    {
-        $partTypeList = new Model();
-        $partTypeList->sql= "SELECT part_type_code, name FROM part_type";
-        $partTypeList->updateResultSet();
-        $list = new DataRepeater($view,$partTypeList,"part_type_code_list",null);
-        //$list->render();
-    }
-
-    /**
-     * Build select list values for Measurament Code by using a DataRepeater
-     *
-     * @param PartRecordView $view
-     */
-    public function makePartCategoryCodeList(PartRecordView $view)
-    {
-        $partCategoryList = new Model();
-        $partCategoryList->sql= "SELECT part_category_code, name FROM part_category";
-        $partCategoryList->updateResultSet();
-        $list = new DataRepeater($view,$partCategoryList,"part_category_code_list",null);
-        //$list->render();
-    }
 
     /**
      * Update Table by using bean
      * @param BeanPart $bean
      */
-    public function setBeanWithPostedData(BeanPart $bean)
+    public function setBeanWithPostedData(BeanTask $bean)
     {
-        $bean->setPartCode($_POST["part_code"]);
-        $bean->setDescription($_POST["description"]);
-        $bean->setSource($_POST["source"]);
-        $bean->setSourceLeadTime($_POST["source_lead_time"]);
-        $bean->setMeasurementUnitCode($_POST["measurement_unit_code"]);
-        $bean->setPartTypeCode($_POST["part_type_code"]);
-        $bean->setPartCategoryCode($_POST["part_category_code"]);
-        $bean->setWastage($_POST["wastage"]);
-        $bean->setBomLevels($_POST["bom_levels"]);
+        $bean->setPartCode($_POST["ID"]);
+        $bean->setDescription($_POST["StartTime"]);
+        $bean->setSource($_POST["FinishTime"]);
+        $bean->setSourceLeadTime($_POST["Operation"]);
+        $bean->setMeasurementUnitCode($_POST["Status"]);
+        $bean->setPartTypeCode($_POST["SQuantity"]);
+        $bean->setPartCategoryCode($_POST["PQuantity"]);
+        $bean->setWastage($_POST["Log"]);
     }
 }

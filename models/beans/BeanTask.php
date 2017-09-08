@@ -30,6 +30,7 @@
  * @license BSD
  * @license https://opensource.org/licenses/BSD-3-Clause This software is distributed under BSD Public License.
 */
+
 namespace models\beans;
 use framework\MySqlRecord;
 use framework\Bean;
@@ -582,7 +583,7 @@ class BeanTask extends MySqlRecord implements Bean
      */
     public function close()
     {
-        unset($this);
+        //unset($this);
     }
 
     /**

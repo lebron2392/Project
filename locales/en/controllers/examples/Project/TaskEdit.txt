@@ -1,16 +1,17 @@
 #Comment: Loads translations defined
 #Load:locales/en/controllers/examples/db/PartPaginatorSorterSearchExternal.txt
-Title=Title
-Form= Task Manager
-TaskID= ID Task
-start= Start Time
-finish= Finish Time
-operation= Operation
-state= STATUS
-select_value= select a value
-scheduled= Scheduled Quantity
-produced= Produced Quantity
-log= employee log
+
+Title=Update Task Status
+Form=Task Manager
+TaskID=ID Task
+start=Start Time
+finish=Finish Time
+operation=Operation
+state=Status
+select_value=Select a value
+scheduled=Scheduled Quantity
+produced=Produced Quantity
+log=Log
 
 measurement_unit_code_select_value=Select measurment code
 source_select_value=Select part source

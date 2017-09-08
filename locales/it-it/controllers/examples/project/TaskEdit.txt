@@ -1,16 +1,17 @@
 #Comment: Loads translations defined
 #Load:locales/it-it/controllers/examples/db/PartPaginatorSorterSearchExternal.txt
-Title=Titolo
+
+Title=Aggiornamento Stato Task
 Form=Gestione Task
 TaskID=Identificativo Task
 start=Ora Inizio
 finish=Ora Fine
 operation=Operazione
-state=STATO
-select_value=seleziona un valore
-scheduled=Quantità Programmata
-produced=Quantità Realizzata
-log=log impiegato
+state=Stato
+select_value=Seleziona un valore
+scheduled=Quantit&agrave Programmata
+produced=Quantit&agrave Realizzata
+log=Commento
 
 measurement_unit_code_select_value=Select measurment code
 source_select_value=Select part source

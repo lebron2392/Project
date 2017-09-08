@@ -53,7 +53,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="part_code" value="{part_code}" required {readonly}>
+                        <input type="text" class="form-control" name="ID" value="{ID}" required {readonly}>
                     </div>
                 </div>
                 
@@ -66,33 +66,33 @@
                         <div class="input-group-addon">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="description" value="{description}" required  {readonly}>
+                        <input type="text" class="form-control" name="StartTime" value="{StartTime}" required  {readonly}>
                     </div>
                 </div>
 
                 <div class="form-group col-sm-12">
                     <div class="col-sm-4 control-label">
-                        <label>{RES:finish}</label>
+                        <label class="text-danger">{RES:finish}</label>
                     </div>
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                         </div>
-                        <input type="number" class="form-control" name="source" value="{source}" required  {readonly}>
+                        <input type="text" class="form-control" name="FinishTime" value="{FinishTime}" required  {readonly}>
                     </div>
                 </div>
 
                 <div class="form-group col-sm-12">
                     <div class="col-sm-4 control-label">
-                        <label>{RES:operation}</label>
+                        <label class="text-danger">{RES:operation}</label>
                     </div>
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="source_lead_time" value="{source_lead_time}" required  {readonly}>
+                        <input type="text" class="form-control" name="Operation" value="{Operation}" required  {readonly}>
                     </div>
                 </div>
                 
@@ -104,7 +104,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-expand" aria-hidden="true"></i>
                         </div>
-                        <select class="form-control" name="measurement_unit_code" id="measurement_unit_code" required >
+                        <select class="form-control" name="Status" id="Status" required >
                             <option value="">{RES:select_value}</option>
                             <option value="RUNNING">RUNNING</option>
                             <option value="STOPPED">STOPPED</option>
@@ -122,7 +122,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="id_part_code" required  {readonly}>
+                        <input type="text" class="form-control" name="SQuantity" value={SQuantity} required  {readonly}>
                     </div>
                 </div>
 
@@ -134,25 +134,22 @@
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="number" class="form-control" name="part_code" value="0" >
+                        <input type="number" class="form-control" name="PQuantity" value="0" >
                     </div>
                 </div> 
                 
                 <div class="form-group col-sm-12">
                     <div class="col-sm-4 control-label">
-                        <label>{RES:log}</label>
+                        <label class="text-danger">{RES:log}</label>
                     </div>
      
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="wastage" value="">
+                        <input type="text" class="form-control" name="Log" value="">
                     </div>
-                </div>  
- 
-
-                
+                </div>
             </div>
      
             <div class="panel-footer">

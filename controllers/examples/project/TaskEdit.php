@@ -8,6 +8,7 @@
  * @category Application Controller
  * @author  {AuthorName} - {AuthorEmail}
 */
+
 namespace controllers\examples\project;
 use framework\Controller;
 use framework\Model;
@@ -17,7 +18,7 @@ use models\examples\project\TaskEdit as PartRecordModel;
 use views\examples\project\TaskEdit as PartRecordView;
 use controllers\examples\cms\NavigationBar;
 use framework\components\Record;
-use models\beans\BeanPart;
+use models\beans\BeanTask;
 use framework\BeanAdapter;
 
 class TaskEdit extends Controller
@@ -53,16 +54,16 @@ class TaskEdit extends Controller
         $this->bindController($navigation);
 
         // Builds select options values
-        $this->model->makeMeausurementUnitCodeList($this->view);
-        $this->model->makePartTypeCodeList($this->view);
-        $this->model->makePartCategoryCodeList($this->view);
+        //$this->model->makeMeausurementUnitCodeList($this->view);
+        //$this->model->makePartTypeCodeList($this->view);
+        //$this->model->makePartCategoryCodeList($this->view);
 
         // Creates a record component instance
         $record = new Record();
 
         // Customizes the record components
         $record->setName("PartManagerRecord");
-        $record->registerPkUrlParameter("part_code");
+        $record->registerPkUrlParameter("id");
 
         // Optionals setting
         $record->registerActionName($record::ADD, "aggiungi");
@@ -85,12 +86,12 @@ class TaskEdit extends Controller
 
         // Creates BeanAclActions, its BeanAdapter and select the
         // current record
-        $bean = new BeanPart();
+        $bean = new BeanTask();
         $beanAdapter = new BeanAdapter($bean);
         $beanAdapter->select($currentRecord);
 
         // Disables update and delete if record was not fouund
-        if ($bean->getPartCode() == ""){
+        if ($bean->getId() == ""){
             $record->disallowAction(Record::DELETE);
             $record->disallowAction(Record::UPDATE);
         }
@@ -129,8 +130,7 @@ class TaskEdit extends Controller
 
     public function open($pk)
     {
-        //$_GET["part_code"] = $pk;
-        $this->view->setVar("part_code",$pk);
+        $_GET["id"] = $pk;
         $this->autorun();
         $this->render();
     }
