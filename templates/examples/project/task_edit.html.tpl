@@ -166,25 +166,6 @@
     </form>
 </div>
 <script type="text/javascript">
-    // Sets all form selects option value
-
-
-    /** Method 1
-    var element = document.getElementById('source');
-    element.value = '{source}';
-
-    var element = document.getElementById('measurement_unit_code');
-    element.value = '{measurement_unit_code}';
-
-    var element = document.getElementById('part_type_code');
-    element.value = '{part_type_code}';
-
-    var element = document.getElementById('part_category_code');
-    element.value = '{part_category_code}';
-    */
-
-    // Method 2 - Better (do not change values when reset button is pressed)
-    // $("#source option[value={source}]").attr('selected','selected');
 
     $('input[name=source][value="{source}"]').prop('checked', true);
 

@@ -1,13 +1,5 @@
 <?php
-/**
- * Class PartPaginator
- *
- * {ControllerResponsability}
- *
- * @package controllers\examples\db
- * @category Application Controller
- * @author  {AuthorName} - {AuthorEmail}
-*/
+
 namespace controllers\examples\project;
 
 use framework\Controller;

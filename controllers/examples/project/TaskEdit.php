@@ -81,8 +81,7 @@ class TaskEdit extends Controller
 
         // Sets disallow mode
         $record->disallowMode = $record::DISALLOW_MODE_WITH_HIDE;
-        // $record->disallowAction(record::UPDATE);
-        // $record->disallowAction($record::DELETE);
+        $record->disallowAction($record::DELETE);
 
         // Creates BeanAclActions, its BeanAdapter and select the
         // current record
@@ -90,10 +89,9 @@ class TaskEdit extends Controller
         $beanAdapter = new BeanAdapter($bean);
         $beanAdapter->select($currentRecord);
 
-        // Disables update and delete if record was not fouund
+        // Disables update if record was not fouund
         if ($bean->getId() == ""){
-            $record->disallowAction(Record::DELETE);
-            $record->disallowAction(Record::UPDATE);
+            $record->disallowAction(Record::ADD);
         }
 
         // Handles form submission and updates the bean attributes
