@@ -116,10 +116,24 @@ class BeanGoodMovement extends MySqlRecord implements Bean
     private $quantity;
 
     /**
+     * Class attribute for mapping table field store_code_out
+     *
+     * Comment for field store_code_out: Not specified.<br>
+     * Field information:
+     *  - Data type: int(11)
+     *  - Null : NO
+     *  - DB Index: 
+     *  - Default: 
+     *  - Extra:  
+     * @var int $storeCodeOut
+     */
+    private $storeCodeOut;
+
+    /**
      * Class attribute for storing the SQL DDL of table good_movement
      * @var string base64 encoded $ddl
      */
-    private $ddl = "Q1JFQVRFIFRBQkxFIGBnb29kX21vdmVtZW50YCAoCiAgYGdvb2RfbW92ZW1lbnRfaWRgIGludCgxMSkgTk9UIE5VTEwsCiAgYG1vdmVtZW50X2RhdGVgIHZhcmNoYXIoNDUpIERFRkFVTFQgTlVMTCwKICBgcGFydF9jb2RlYCB2YXJjaGFyKDQwKSBOT1QgTlVMTCwKICBgc3RvcmVfY29kZWAgaW50KDExKSBOT1QgTlVMTCwKICBgcXVhbnRpdHlgIGRlY2ltYWwoMTEsMikgREVGQVVMVCBOVUxMLAogIFBSSU1BUlkgS0VZIChgZ29vZF9tb3ZlbWVudF9pZGApLAogIEtFWSBgZmtfaW52ZW50b3J5X2xvZ19wYXJ0MV9pZHhgIChgcGFydF9jb2RlYCksCiAgS0VZIGBma19pbnZlbnRvcnlfbG9nX3N0b3JlMV9pZHhgIChgc3RvcmVfY29kZWApLAogIENPTlNUUkFJTlQgYGZrX2ludmVudG9yeV9sb2dfcGFydDFgIEZPUkVJR04gS0VZIChgcGFydF9jb2RlYCkgUkVGRVJFTkNFUyBgcGFydGAgKGBwYXJ0X2NvZGVgKSBPTiBERUxFVEUgTk8gQUNUSU9OIE9OIFVQREFURSBOTyBBQ1RJT04sCiAgQ09OU1RSQUlOVCBgZmtfaW52ZW50b3J5X2xvZ19zdG9yZTFgIEZPUkVJR04gS0VZIChgc3RvcmVfY29kZWApIFJFRkVSRU5DRVMgYHN0b3JlYCAoYHN0b3JlX2NvZGVgKSBPTiBERUxFVEUgTk8gQUNUSU9OIE9OIFVQREFURSBOTyBBQ1RJT04KKSBFTkdJTkU9SW5ub0RCIERFRkFVTFQgQ0hBUlNFVD11dGY4";
+    private $ddl = "Q1JFQVRFIFRBQkxFIGBnb29kX21vdmVtZW50YCAoCiAgYGdvb2RfbW92ZW1lbnRfaWRgIGludCgxMSkgTk9UIE5VTEwsCiAgYG1vdmVtZW50X2RhdGVgIHZhcmNoYXIoNDUpIERFRkFVTFQgTlVMTCwKICBgcGFydF9jb2RlYCB2YXJjaGFyKDQwKSBOT1QgTlVMTCwKICBgc3RvcmVfY29kZWAgaW50KDExKSBOT1QgTlVMTCwKICBgcXVhbnRpdHlgIGRlY2ltYWwoMTEsMikgREVGQVVMVCBOVUxMLAogIGBzdG9yZV9jb2RlX291dGAgaW50KDExKSBOT1QgTlVMTCwKICBQUklNQVJZIEtFWSAoYGdvb2RfbW92ZW1lbnRfaWRgKSwKICBLRVkgYGZrX2ludmVudG9yeV9sb2dfcGFydDFfaWR4YCAoYHBhcnRfY29kZWApLAogIEtFWSBgZmtfaW52ZW50b3J5X2xvZ19zdG9yZTFfaWR4YCAoYHN0b3JlX2NvZGVgKQopIEVOR0lORT1Jbm5vREIgREVGQVVMVCBDSEFSU0VUPXV0Zjg=";
 
     /**
      * setGoodMovementId Sets the class attribute goodMovementId with a given value
@@ -187,6 +201,19 @@ class BeanGoodMovement extends MySqlRecord implements Bean
     }
 
     /**
+     * setStoreCodeOut Sets the class attribute storeCodeOut with a given value
+     *
+     * The attribute storeCodeOut maps the field store_code_out defined as int(11).<br>
+     * Comment for field store_code_out: Not specified.<br>
+     * @param int $storeCodeOut
+     * @category Modifier
+     */
+    public function setStoreCodeOut($storeCodeOut)
+    {
+        $this->storeCodeOut = (int)$storeCodeOut;
+    }
+
+    /**
      * getGoodMovementId gets the class attribute goodMovementId value
      *
      * The attribute goodMovementId maps the field good_movement_id defined as int(11).<br>
@@ -249,6 +276,19 @@ class BeanGoodMovement extends MySqlRecord implements Bean
     public function getQuantity()
     {
         return $this->quantity;
+    }
+
+    /**
+     * getStoreCodeOut gets the class attribute storeCodeOut value
+     *
+     * The attribute storeCodeOut maps the field store_code_out defined as int(11).<br>
+     * Comment for field store_code_out: Not specified.
+     * @return int $storeCodeOut
+     * @category Accessor of $storeCodeOut
+     */
+    public function getStoreCodeOut()
+    {
+        return $this->storeCodeOut;
     }
 
     /**
@@ -328,6 +368,7 @@ class BeanGoodMovement extends MySqlRecord implements Bean
             @$this->partCode = $this->replaceAposBackSlash($rowObject->part_code);
             @$this->storeCode = (integer)$rowObject->store_code;
             @$this->quantity = (float)$rowObject->quantity;
+            @$this->storeCodeOut = (integer)$rowObject->store_code_out;
             $this->allowUpdate = true;
         } else {
             $this->lastSqlError = $this->sqlstate . " - ". $this->error;
@@ -368,12 +409,13 @@ class BeanGoodMovement extends MySqlRecord implements Bean
         // $constants = get_defined_constants();
         $sql = <<< SQL
             INSERT INTO good_movement
-            (good_movement_id,movement_date,part_code,store_code,quantity)
+            (good_movement_id,movement_date,part_code,store_code,quantity,store_code_out)
             VALUES({$this->parseValue($this->goodMovementId)},
 			{$this->parseValue($this->movementDate,'notNumber')},
 			{$this->parseValue($this->partCode,'notNumber')},
 			{$this->parseValue($this->storeCode)},
-			{$this->parseValue($this->quantity)})
+			{$this->parseValue($this->quantity)},
+			{$this->parseValue($this->storeCodeOut)})
 SQL;
         $this->resetLastSqlError();
         $result = $this->query($sql);
@@ -409,7 +451,8 @@ SQL;
 				movement_date={$this->parseValue($this->movementDate,'notNumber')},
 				part_code={$this->parseValue($this->partCode,'notNumber')},
 				store_code={$this->parseValue($this->storeCode)},
-				quantity={$this->parseValue($this->quantity)}
+				quantity={$this->parseValue($this->quantity)},
+				store_code_out={$this->parseValue($this->storeCodeOut)}
             WHERE
                 good_movement_id={$this->parseValue($goodMovementId,'int')}
 SQL;

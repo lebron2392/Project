@@ -8,7 +8,7 @@
 
 namespace controllers\examples\project;
 
-use views\examples\project\PartList as PartListView;
+use views\examples\project\P1 as PartListView;
 use framework\components\Searcher;
 class PartPaginatorSorterSearch extends PartPaginatorSorter
 {

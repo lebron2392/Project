@@ -74,10 +74,24 @@ class BeanStore extends MySqlRecord implements Bean
     private $name;
 
     /**
+     * Class attribute for mapping table field store_type_code
+     *
+     * Comment for field store_type_code: Not specified.<br>
+     * Field information:
+     *  - Data type: text
+     *  - Null : NO
+     *  - DB Index: 
+     *  - Default: 
+     *  - Extra:  
+     * @var string $storeTypeCode
+     */
+    private $storeTypeCode;
+
+    /**
      * Class attribute for storing the SQL DDL of table store
      * @var string base64 encoded $ddl
      */
-    private $ddl = "Q1JFQVRFIFRBQkxFIGBzdG9yZWAgKAogIGBzdG9yZV9jb2RlYCBpbnQoMTEpIE5PVCBOVUxMLAogIGBuYW1lYCB2YXJjaGFyKDQ1KSBERUZBVUxUIE5VTEwsCiAgUFJJTUFSWSBLRVkgKGBzdG9yZV9jb2RlYCkKKSBFTkdJTkU9SW5ub0RCIERFRkFVTFQgQ0hBUlNFVD11dGY4";
+    private $ddl = "Q1JFQVRFIFRBQkxFIGBzdG9yZWAgKAogIGBzdG9yZV9jb2RlYCBpbnQoMTEpIE5PVCBOVUxMLAogIGBuYW1lYCB2YXJjaGFyKDQ1KSBERUZBVUxUIE5VTEwsCiAgYHN0b3JlX3R5cGVfY29kZWAgdGV4dCBOT1QgTlVMTCwKICBQUklNQVJZIEtFWSAoYHN0b3JlX2NvZGVgKQopIEVOR0lORT1Jbm5vREIgREVGQVVMVCBDSEFSU0VUPXV0Zjg=";
 
     /**
      * setStoreCode Sets the class attribute storeCode with a given value
@@ -106,6 +120,19 @@ class BeanStore extends MySqlRecord implements Bean
     }
 
     /**
+     * setStoreTypeCode Sets the class attribute storeTypeCode with a given value
+     *
+     * The attribute storeTypeCode maps the field store_type_code defined as text.<br>
+     * Comment for field store_type_code: Not specified.<br>
+     * @param string $storeTypeCode
+     * @category Modifier
+     */
+    public function setStoreTypeCode($storeTypeCode)
+    {
+        $this->storeTypeCode = (string)$storeTypeCode;
+    }
+
+    /**
      * getStoreCode gets the class attribute storeCode value
      *
      * The attribute storeCode maps the field store_code defined as int(11).<br>
@@ -129,6 +156,19 @@ class BeanStore extends MySqlRecord implements Bean
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * getStoreTypeCode gets the class attribute storeTypeCode value
+     *
+     * The attribute storeTypeCode maps the field store_type_code defined as text.<br>
+     * Comment for field store_type_code: Not specified.
+     * @return string $storeTypeCode
+     * @category Accessor of $storeTypeCode
+     */
+    public function getStoreTypeCode()
+    {
+        return $this->storeTypeCode;
     }
 
     /**
@@ -205,6 +245,7 @@ class BeanStore extends MySqlRecord implements Bean
             $rowObject = $result->fetch_object();
             @$this->storeCode = (integer)$rowObject->store_code;
             @$this->name = $this->replaceAposBackSlash($rowObject->name);
+            @$this->storeTypeCode = $this->replaceAposBackSlash($rowObject->store_type_code);
             $this->allowUpdate = true;
         } else {
             $this->lastSqlError = $this->sqlstate . " - ". $this->error;
@@ -245,9 +286,10 @@ class BeanStore extends MySqlRecord implements Bean
         // $constants = get_defined_constants();
         $sql = <<< SQL
             INSERT INTO store
-            (store_code,name)
+            (store_code,name,store_type_code)
             VALUES({$this->parseValue($this->storeCode)},
-			{$this->parseValue($this->name,'notNumber')})
+			{$this->parseValue($this->name,'notNumber')},
+			{$this->parseValue($this->storeTypeCode,'notNumber')})
 SQL;
         $this->resetLastSqlError();
         $result = $this->query($sql);
@@ -280,7 +322,8 @@ SQL;
             UPDATE
                 store
             SET 
-				name={$this->parseValue($this->name,'notNumber')}
+				name={$this->parseValue($this->name,'notNumber')},
+				store_type_code={$this->parseValue($this->storeTypeCode,'notNumber')}
             WHERE
                 store_code={$this->parseValue($storeCode,'int')}
 SQL;

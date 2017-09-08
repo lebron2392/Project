@@ -51,7 +51,7 @@
      
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-th" aria-hidden="true"></i> 
+                            <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
                         <input type="text" class="form-control" name="part_code" value="{part_code}" required {readonly}>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="input-group-addon">
                             <i class="fa fa-file-text-o" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="description" value="{description}" required>
+                        <input type="text" class="form-control" name="description" value="{description}" required >
                     </div>
                 </div>
                 
