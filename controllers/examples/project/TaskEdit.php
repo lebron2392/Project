@@ -75,13 +75,13 @@ class TaskEdit extends Controller
         $currentRecord = $record->getCurrentRecord();
 
         // Sets history back for buttons close and delete
-        $historyBack = $record->getControllerHistoryBack("part_list_manager");
+        $historyBack = $record->getControllerHistoryBack("part_paginator_sorter_search2");
         $record->redirectAfterClose = $historyBack;
-        $record->redirectAfterDelete = $historyBack;
 
         // Sets disallow mode
         $record->disallowMode = $record::DISALLOW_MODE_WITH_HIDE;
         $record->disallowAction($record::DELETE);
+        $record->disallowAction($record::ADD);
 
         // Creates BeanAclActions, its BeanAdapter and select the
         // current record
@@ -91,7 +91,7 @@ class TaskEdit extends Controller
 
         // Disables update if record was not fouund
         if ($bean->getId() == ""){
-            $record->disallowAction(Record::ADD);
+            $record->disallowAction(Record::UPDATE);
         }
 
         // Handles form submission and updates the bean attributes
@@ -106,7 +106,7 @@ class TaskEdit extends Controller
             $record->init($beanAdapter);
         } catch (\Exception $e){
             if ($record->editMode == false) {
-                $bean->setPartCode(null);
+                $bean->setId(null);
                 $record->disallowAction(Record::UPDATE);
                 $record->disallowAction(Record::DELETE);
             } else {

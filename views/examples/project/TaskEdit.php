@@ -48,5 +48,6 @@ class TaskEdit extends View
         $this->setVar("FinishTime",$bean->getOrafine());
         $this->setVar("Operation",$bean->getOperazione());
         $this->setVar("SQuantity",$bean->getQuantitaprogrammata());
+        $this->setVar("PQuantity",$bean->getQuantitarealizzata());
     }
 }

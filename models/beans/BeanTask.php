@@ -228,6 +228,10 @@ class BeanTask extends MySqlRecord implements Bean
      * @param int $id
      * @category Modifier
      */
+
+    private $quantitaaggiuntiva;
+
+
     public function setId($id)
     {
         $this->id = (int)$id;
@@ -375,6 +379,13 @@ class BeanTask extends MySqlRecord implements Bean
     {
         $this->idodl = (int)$idodl;
     }
+
+
+    public function setQuantitaaggiuntiva($quantitaaggiuntiva)
+    {
+        $this->quantitaaggiuntiva = (int)$quantitaaggiuntiva;
+    }
+
 
     /**
      * getId gets the class attribute id value
@@ -697,32 +708,32 @@ SQL;
     {
         // $constants = get_defined_constants();
         if ($this->allowUpdate) {
-            $sql = <<< SQL
-            UPDATE
-                task
-            SET 
-				OraInizio={$this->parseValue($this->orainizio,'notNumber')},
-				OraFine={$this->parseValue($this->orafine,'notNumber')},
-				Operazione={$this->parseValue($this->operazione,'notNumber')},
-				Stato={$this->parseValue($this->stato,'notNumber')},
-				QuantitaProgrammata={$this->parseValue($this->quantitaprogrammata)},
-				QuantitaRealizzata={$this->parseValue($this->quantitarealizzata)},
-				ErrorLog={$this->parseValue($this->errorlog,'notNumber')},
-				Edificio={$this->parseValue($this->edificio,'notNumber')},
-				Reparto={$this->parseValue($this->reparto,'notNumber')},
-				Macchinario={$this->parseValue($this->macchinario,'notNumber')},
-				IDODL={$this->parseValue($this->idodl)}
-            WHERE
-                ID={$this->parseValue($id,'int')}
+
+            $quantity = $this->quantitarealizzata + $this->quantitaaggiuntiva;
+
+            if ($this->quantitaprogrammata >= $quantity) {
+                $sql =
+<<< SQL
+                    UPDATE
+                      task
+                    SET 
+				      Stato={$this->parseValue($this->stato,'notNumber')},
+				      QuantitaRealizzata={$this->parseValue($quantity)},
+				      ErrorLog={$this->parseValue($this->errorlog,'notNumber')}
+                    WHERE
+                      ID={$this->parseValue($id,'int')}
 SQL;
-            $this->resetLastSqlError();
-            $result = $this->query($sql);
-            if (!$result) {
-                $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+                $this->resetLastSqlError();
+                $result = $this->query($sql);
+                if (!$result) {
+                    $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+                } else {
+                    $this->select($id);
+                    $this->lastSql = $sql;
+                    return $result;
+                }
             } else {
-                $this->select($id);
-                $this->lastSql = $sql;
-                return $result;
+                $this->lastSqlError = "Error";
             }
         } else {
             return false;

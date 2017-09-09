@@ -11,7 +11,11 @@ state=Stato
 select_value=Seleziona un valore
 scheduled=Quantit&agrave Programmata
 produced=Quantit&agrave Realizzata
+additional=Quantit&agrave Aggiuntiva
 log=Commento
+value1=IN CORSO
+value2=FERMO
+value3=CONCLUSO
 
 measurement_unit_code_select_value=Select measurment code
 source_select_value=Select part source

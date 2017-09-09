@@ -106,9 +106,9 @@
                         </div>
                         <select class="form-control" name="Status" id="Status" required >
                             <option value="">{RES:select_value}</option>
-                            <option value="RUNNING">RUNNING</option>
-                            <option value="STOPPED">STOPPED</option>
-                            <option value="FINISHED">FINISHED</option>
+                            <option value="RUNNING">{RES:value1}</option>
+                            <option value="STOPPED">{RES:value2}</option>
+                            <option value="FINISHED">{RES:value3}</option>
 
                         </select>
                     </div>
@@ -134,7 +134,19 @@
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="number" class="form-control" name="PQuantity" value="0" >
+                        <input type="text" class="form-control" name="PQuantity" value={PQuantity} required  {readonly}>
+                    </div>
+                </div>
+
+                <div class="form-group row col-sm-12">
+                    <div class="col-sm-4 control-label">
+                        <label class="text-danger">{RES:additional}</label>
+                    </div>
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-th" aria-hidden="true"></i>
+                        </div>
+                        <input type="number" class="form-control" name="AQuantity" value="0" >
                     </div>
                 </div> 
                 
@@ -165,21 +177,5 @@
         
     </form>
 </div>
-<script type="text/javascript">
-
-    $('input[name=source][value="{source}"]').prop('checked', true);
-
-    var measurement_unit_code = '{measurement_unit_code}';
-    if (measurement_unit_code != '')
-        $("#measurement_unit_code option[value={measurement_unit_code}]").attr('selected','selected');
-
-    var part_type_code = '{part_type_code}';
-    if (part_type_code != '')
-        $("#part_type_code option[value={part_type_code}]").attr('selected','selected');
-
-    var part_category_code = '{part_category_code}';
-    if (part_category_code != '')
-        $("#part_category_code option[value={part_category_code}]").attr('selected','selected');
-</script>
 </body>
 </html>

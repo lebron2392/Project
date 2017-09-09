@@ -44,13 +44,14 @@ class TaskEdit extends Model
      */
     public function setBeanWithPostedData(BeanTask $bean)
     {
-        $bean->setPartCode($_POST["ID"]);
-        $bean->setDescription($_POST["StartTime"]);
-        $bean->setSource($_POST["FinishTime"]);
-        $bean->setSourceLeadTime($_POST["Operation"]);
-        $bean->setMeasurementUnitCode($_POST["Status"]);
-        $bean->setPartTypeCode($_POST["SQuantity"]);
-        $bean->setPartCategoryCode($_POST["PQuantity"]);
-        $bean->setWastage($_POST["Log"]);
+        $bean->setId($_POST["ID"]);
+        $bean->setOrainizio($_POST["StartTime"]);
+        $bean->setOrafine($_POST["FinishTime"]);
+        $bean->setOperazione($_POST["Operation"]);
+        $bean->setStato($_POST["Status"]);
+        $bean->setQuantitaprogrammata($_POST["SQuantity"]);
+        $bean->setQuantitarealizzata($_POST["PQuantity"]);
+        $bean->setQuantitaaggiuntiva($_POST["AQuantity"]);
+        $bean->setErrorlog($_POST["Log"]);
     }
 }
