@@ -1,0 +1,8 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/project/PartList2.txt
+
+SearchFormTitle=Ricerca Task
+IDTaskLabel=ID Task
+IDTaskPlaceholder=Inserire un ID
+SearchSubmitCaption=Cerca
+SearchResetCaption=Reset

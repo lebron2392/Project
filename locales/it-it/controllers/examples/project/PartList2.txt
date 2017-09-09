@@ -1,0 +1,10 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/cms/Localization.txt
+
+PartsList=Ricerca Task
+ID=ID Task
+OraInizio=Ora Inizio
+OraFine=Ora Fine
+Operazione=Operazione
+Cognome=Cognome
+Nome=Nome
