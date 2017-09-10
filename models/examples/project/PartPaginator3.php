@@ -4,15 +4,15 @@ namespace models\examples\project;
 
 use framework\Model;
 
-class PartPaginator2 extends Model
+class PartPaginator3 extends Model
 {
     public function __construct()
     {
         parent::__construct();
         $this->sql =
 <<<SQL
-            SELECT IDTask, OraInizio, OraFine, Operazione
-            FROM task
+            SELECT IDOperaio, Cognome, Nome, Ruolo, DataAssunzione
+            FROM operaio
 SQL;
         $this->updateResultSet();
     }

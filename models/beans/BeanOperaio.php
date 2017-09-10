@@ -316,14 +316,14 @@ class BeanOperaio extends MySqlRecord implements Bean
      */
     public function select($id)
     {
-        $sql =  "SELECT * FROM operaio WHERE ID={$this->parseValue($id,'int')}";
+        $sql =  "SELECT * FROM operaio WHERE IDOperaio={$this->parseValue($id,'int')}";
         $this->resetLastSqlError();
         $result =  $this->query($sql);
         $this->resultSet=$result;
         $this->lastSql = $sql;
         if ($result){
             $rowObject = $result->fetch_object();
-            @$this->id = (integer)$rowObject->ID;
+            @$this->id = (integer)$rowObject->IDOperaio;
             @$this->nome = $this->replaceAposBackSlash($rowObject->Nome);
             @$this->cognome = $this->replaceAposBackSlash($rowObject->Cognome);
             @$this->ruolo = $this->replaceAposBackSlash($rowObject->Ruolo);
@@ -343,7 +343,7 @@ class BeanOperaio extends MySqlRecord implements Bean
      */
     public function delete($id)
     {
-        $sql = "DELETE FROM operaio WHERE ID={$this->parseValue($id,'int')}";
+        $sql = "DELETE FROM operaio WHERE IDOperaio={$this->parseValue($id,'int')}";
         $this->resetLastSqlError();
         $result = $this->query($sql);
         $this->lastSql = $sql;
@@ -368,7 +368,7 @@ class BeanOperaio extends MySqlRecord implements Bean
         // $constants = get_defined_constants();
         $sql = <<< SQL
             INSERT INTO operaio
-            (ID,Nome,Cognome,Ruolo,DataAssunzione)
+            (IDOperaio,Nome,Cognome,Ruolo,DataAssunzione)
             VALUES({$this->parseValue($this->id)},
 			{$this->parseValue($this->nome,'notNumber')},
 			{$this->parseValue($this->cognome,'notNumber')},
@@ -411,7 +411,7 @@ SQL;
 				Ruolo={$this->parseValue($this->ruolo,'notNumber')},
 				DataAssunzione={$this->parseValue($this->dataassunzione,'date')}
             WHERE
-                ID={$this->parseValue($id,'int')}
+                IDOperaio={$this->parseValue($id,'int')}
 SQL;
             $this->resetLastSqlError();
             $result = $this->query($sql);

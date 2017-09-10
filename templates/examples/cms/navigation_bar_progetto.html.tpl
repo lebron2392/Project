@@ -19,10 +19,9 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search2">{RES:B}</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="http://www.google.com">{RES:C}</a></li>
+                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search3">{RES:C}</a></li>
                     </ul>
                 </li>
-
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{RES:Setting} <span class="caret"></span></a>

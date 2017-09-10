@@ -2,10 +2,10 @@
 
 namespace controllers\examples\project;
 
-use views\examples\project\P2 as PartListView;
+use views\examples\project\P3 as PartListView;
 use framework\components\Searcher;
 
-class PartPaginatorSorterSearch2 extends PartPaginatorSorter2
+class PartPaginatorSorterSearch3 extends PartPaginatorSorter3
 {
 
     public function autorun($parameters = null)
@@ -29,7 +29,7 @@ class PartPaginatorSorterSearch2 extends PartPaginatorSorter2
         $searcher->setName("ricerca");
 
         // Creates filters: table field, form input, operators into query, type
-        $searcher->addFilter("IDTask","s_id","=","string");
+        $searcher->addFilter("IDOperaio","s_id","=","string");
 
         // Sets form name (tpl variable)
         $searcher->setFormName("search_form", $searcher->getName());
@@ -44,7 +44,7 @@ class PartPaginatorSorterSearch2 extends PartPaginatorSorter2
 
     public function getView()
     {
-        $view = new PartListView("/examples/project/part_paginator_sorter_search2");
+        $view = new PartListView("/examples/project/part_paginator_sorter_search3");
         return $view;
     }
 

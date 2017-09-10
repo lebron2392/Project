@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Saro
- * Date: 11/04/2017
- * Time: 17:17
- */
 
 namespace controllers\examples\project;
 
 use views\examples\project\P1 as PartListView;
 use framework\components\Searcher;
+
 class PartPaginatorSorterSearch extends PartPaginatorSorter
 {
 

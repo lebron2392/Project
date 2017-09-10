@@ -23,7 +23,6 @@
     <div id="search-panel" class="panel panel-primary collapse in" aria-expanded="true">
         <div class="panel-heading">
             <h3 class="panel-title">{RES:SearchFormTitle}</h3>
-
         </div>
 
         <form class="form-horizontal" method="post" name="{search_form}">

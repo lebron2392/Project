@@ -1,0 +1,8 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/project/PartList3.txt
+
+SearchFormTitle=Ricerca Operaio
+IDOperaioLabel=ID Operaio
+IDOperaioPlaceholder=Inserire un ID
+SearchSubmitCaption=Cerca
+SearchResetCaption=Reset

@@ -11,8 +11,6 @@
 namespace models\examples\project;
 
 use framework\Model;
-use views\examples\project\TaskEdit as PartRecordView;
-use framework\components\DataRepeater;
 use models\beans\BeanTask;
 
 class TaskEdit extends Model

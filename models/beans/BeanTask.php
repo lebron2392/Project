@@ -608,14 +608,14 @@ class BeanTask extends MySqlRecord implements Bean
      */
     public function select($id)
     {
-        $sql =  "SELECT * FROM task WHERE ID={$this->parseValue($id,'int')}";
+        $sql =  "SELECT * FROM task WHERE IDTask={$this->parseValue($id,'int')}";
         $this->resetLastSqlError();
         $result =  $this->query($sql);
         $this->resultSet=$result;
         $this->lastSql = $sql;
         if ($result){
             $rowObject = $result->fetch_object();
-            @$this->id = (integer)$rowObject->ID;
+            @$this->id = (integer)$rowObject->IDTask;
             @$this->orainizio = $rowObject->OraInizio;
             @$this->orafine = $rowObject->OraFine;
             @$this->operazione = $this->replaceAposBackSlash($rowObject->Operazione);
@@ -642,7 +642,7 @@ class BeanTask extends MySqlRecord implements Bean
      */
     public function delete($id)
     {
-        $sql = "DELETE FROM task WHERE ID={$this->parseValue($id,'int')}";
+        $sql = "DELETE FROM task WHERE IDTask={$this->parseValue($id,'int')}";
         $this->resetLastSqlError();
         $result = $this->query($sql);
         $this->lastSql = $sql;
@@ -667,7 +667,7 @@ class BeanTask extends MySqlRecord implements Bean
         // $constants = get_defined_constants();
         $sql = <<< SQL
             INSERT INTO task
-            (ID,OraInizio,OraFine,Operazione,Stato,QuantitaProgrammata,QuantitaRealizzata,ErrorLog,Edificio,Reparto,Macchinario,IDODL)
+            (IDTask,OraInizio,OraFine,Operazione,Stato,QuantitaProgrammata,QuantitaRealizzata,ErrorLog,Edificio,Reparto,Macchinario,IDODL)
             VALUES({$this->parseValue($this->id)},
 			{$this->parseValue($this->orainizio,'notNumber')},
 			{$this->parseValue($this->orafine,'notNumber')},
@@ -721,7 +721,7 @@ SQL;
 				      QuantitaRealizzata={$this->parseValue($quantity)},
 				      ErrorLog={$this->parseValue($this->errorlog,'notNumber')}
                     WHERE
-                      ID={$this->parseValue($id,'int')}
+                      IDTask={$this->parseValue($id,'int')}
 SQL;
                 $this->resetLastSqlError();
                 $result = $this->query($sql);

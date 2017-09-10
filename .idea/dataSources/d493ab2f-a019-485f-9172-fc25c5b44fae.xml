@@ -77,7 +77,7 @@ IDCommessa</ColNames>
       <ColNames>IDTask</ColNames>
       <RefSchemaName>mrp</RefSchemaName>
       <RefTableName>task</RefTableName>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>IDTask</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -284,7 +284,7 @@ IDTask</ColNames>
       <ColNames>IDTask</ColNames>
       <RefSchemaName>mrp</RefSchemaName>
       <RefTableName>task</RefTableName>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>IDTask</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -309,8 +309,7 @@ IDTask</ColNames>
     </column>
     <column id="87" parent="20" name="Giorno">
       <Position>2</Position>
-      <DataType>date|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(45)|0</DataType>
     </column>
     <column id="88" parent="20" name="IDOperaio">
       <Position>3</Position>
@@ -329,11 +328,11 @@ IDTask</ColNames>
       <ColNames>IDOperaio</ColNames>
       <RefSchemaName>mrp</RefSchemaName>
       <RefTableName>operaio</RefTableName>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>IDOperaio</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="92" parent="21" name="ID">
+    <column id="92" parent="21" name="IDOperaio">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -360,7 +359,7 @@ IDTask</ColNames>
     </column>
     <key id="97" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
+      <ColNames>IDOperaio</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="98" parent="22" name="In">
@@ -628,7 +627,7 @@ part_code</ColNames>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="156" parent="33" name="ID">
+    <column id="156" parent="33" name="IDTask">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -693,7 +692,7 @@ part_code</ColNames>
     </index>
     <key id="169" parent="33" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
+      <ColNames>IDTask</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="170" parent="33" name="task_ibfk_1">

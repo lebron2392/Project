@@ -23,7 +23,6 @@
     <div id="search-panel" class="panel panel-primary collapse in" aria-expanded="true">
         <div class="panel-heading">
             <h3 class="panel-title">{RES:SearchFormTitle}</h3>
-
         </div>
 
         <form class="form-horizontal" method="post" name="{search_form}">
@@ -62,23 +61,19 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>{SorterBootstrap:ID}</th>
+                <th>{SorterBootstrap:IDTask}</th>
                 <th>{SorterBootstrap:OraInizio}</th>
                 <th>{SorterBootstrap:OraFine}</th>
                 <th>{SorterBootstrap:Operazione}</th>
-                <th>{SorterBootstrap:Cognome}</th>
-                <th>{SorterBootstrap:Nome}</th>
             </tr>
             </thead>
             <tbody>
             <!-- BEGIN Parts -->
             <tr>
-                <td><a href="task_edit/open/{ID}">{ID}</a></td>
+                <td><a href="task_edit/open/{IDTask}">{IDTask}</a></td>
                 <td>{OraInizio}</td>
                 <td>{OraFine}</td>
                 <td>{Operazione}</td>
-                <td>{Cognome}</td>
-                <td>{Nome}</td>
             </tr>
             <!-- END Parts -->
             </tbody>

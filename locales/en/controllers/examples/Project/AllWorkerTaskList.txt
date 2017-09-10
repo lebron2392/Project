@@ -1,0 +1,17 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/cms/Localization.txt
+
+Title=Timesheet
+IDTask=IDTask
+OraInizio=Start Time
+OraFine=Finish Time
+Operazione=Operation
+Stato=State
+QuantitaProgrammata=Scheduled Quantity
+QuantitaRealizzata=Produced Quantity
+ErrorLog=Error Log
+Edificio=Building
+Reparto=Department
+Macchinario=Machinery
+AllParts=End Timesheet
+Back=Back

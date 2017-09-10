@@ -6,7 +6,7 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 use models\examples\project\PartPaginator as PartPaginatorModel;
-use views\examples\project\PartList as PartListView;
+use views\examples\project\P1 as PartListView;
 use controllers\examples\cms\NavigationBar;
 use framework\components\DataRepeater;
 use framework\components\bootstrap\PaginatorBootstrap;
@@ -56,7 +56,7 @@ class PartPaginatorSorter extends Controller
         // Finally binding
         // Sortes components
         $this->bindComponent($sorterID);
-        $this->bindComponent($sorterGiorno);
+       $this->bindComponent($sorterGiorno);
         $this->bindComponent($sorterIDOperaio);
 
         // Paginator component

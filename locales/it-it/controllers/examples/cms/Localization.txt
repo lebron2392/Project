@@ -10,4 +10,4 @@ Exit=Esci
 
 A=Cerca Scheda Attivit&agrave Impiegato
 B=Cerca e Modifica Stato Task
-C=link 3
+C=Cerca Operaio

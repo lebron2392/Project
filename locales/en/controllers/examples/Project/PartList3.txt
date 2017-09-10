@@ -1,10 +1,9 @@
 #Comment: Loads translations defined
 #Load:locales/en/controllers/examples/cms/Localization.txt
 
-PartsList=Search Task
-IDTask=ID Task
-OraInizio=Start Time
-OraFine=Finish Time
-Operazione=Operation
+PartsList=Search Worker
+IDOperaio=ID Worker
 Cognome=Surname
 Nome=Name
+Ruolo=Role
+DataAssunzione=Assumption Date

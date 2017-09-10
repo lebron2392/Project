@@ -6,15 +6,15 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 
-use models\examples\project\PartPaginator2 as PartPaginatorModel;
-use views\examples\project\P2 as PartListView;
+use models\examples\project\PartPaginator3 as PartPaginatorModel;
+use views\examples\project\P3 as PartListView;
 
 use controllers\examples\cms\NavigationBar;
 use framework\components\DataRepeater;
 use framework\components\bootstrap\PaginatorBootstrap;
 use framework\components\bootstrap\SorterBootstrap;
 
-class PartPaginatorSorter2 extends Controller
+class PartPaginatorSorter3 extends Controller
 {
     /**
     * Object constructor.
@@ -45,9 +45,10 @@ class PartPaginatorSorter2 extends Controller
 
         // Sort
         $sorterID = $this->makeSoterID();
-        $sorterOraInizio = $this->makeSoterOraInizio();
-        $sorterOraFine = $this->makeSoterOraFine();
-        $sorterOperazione = $this->makeSoterOperazione();
+        $sorterCognome = $this->makeSoterCognome();
+        $sorterNome = $this->makeSoterNome();
+        $sorterRuolo = $this->makeSoterRuolo();
+        $sorterDataAssunzione = $this->makeSoterDataAssunzione();
 
         // Paginate
         $paginator = $this->makePaginator();
@@ -59,9 +60,10 @@ class PartPaginatorSorter2 extends Controller
         // Finally binding
         // Sortes components
         $this->bindComponent($sorterID);
-        $this->bindComponent($sorterOraInizio);
-        $this->bindComponent($sorterOraFine);
-        $this->bindComponent($sorterOperazione);
+        $this->bindComponent($sorterCognome);
+        $this->bindComponent($sorterNome);
+        $this->bindComponent($sorterRuolo);
+        $this->bindComponent($sorterDataAssunzione);
 
         // Paginator component
         $this->bindComponent($paginator);
@@ -94,52 +96,63 @@ class PartPaginatorSorter2 extends Controller
         return $parts;
     }
 
-
+    /**
+     * Makes sorter for part_code field
+     * @return SorterBootstrap
+     */
     protected function makeSoterID()
     {
         $sorterID = new SorterBootstrap();
-        $sorterID->setName("IDTask");
-        $sorterID->field = "IDTask";
-        $sorterID->caption = "{RES:IDTask}";
+        $sorterID->setName("IDOperaio");
+        $sorterID->field = "IDOperaio";
+        $sorterID->caption = "{RES:IDOperaio}";
         $sorterID->init($this->model);
         return $sorterID;
     }
 
-
-    protected function makeSoterOraInizio()
+    protected function makeSoterCognome()
     {
-        $sorterOraInizio = new SorterBootstrap();
-        $sorterOraInizio->setName("OraInizio");
-        $sorterOraInizio->field = "OraInizio";
-        $sorterOraInizio->caption = "{RES:OraInizio}";
-        $sorterOraInizio->init($this->model);
-        return $sorterOraInizio;
+        $sorterCognome = new SorterBootstrap();
+        $sorterCognome->setName("Cognome");
+        $sorterCognome->field = "Cognome";
+        $sorterCognome->caption = "{RES:Cognome}";
+        $sorterCognome->init($this->model);
+        return $sorterCognome;
     }
 
-
-    protected function makeSoterOraFine()
+    protected function makeSoterNome()
     {
-        $sorterOraFine = new SorterBootstrap();
-        $sorterOraFine->setName("OraFine");
-        $sorterOraFine->field = "OraFine";
-        $sorterOraFine->caption = "{RES:OraFine}";
-        $sorterOraFine->init($this->model);
-        return $sorterOraFine;
+        $sorterNome = new SorterBootstrap();
+        $sorterNome->setName("Nome");
+        $sorterNome->field = "Nome";
+        $sorterNome->caption = "{RES:Nome}";
+        $sorterNome->init($this->model);
+        return $sorterNome;
     }
 
-    protected function makeSoterOperazione()
+    protected function makeSoterRuolo()
     {
-        $sorterOperazione = new SorterBootstrap();
-        $sorterOperazione->setName("Operazione");
-        $sorterOperazione->field = "Operazione";
-        $sorterOperazione->caption = "{RES:Operazione}";
-        $sorterOperazione->init($this->model);
-        return $sorterOperazione;
+        $sorterRuolo = new SorterBootstrap();
+        $sorterRuolo->setName("Ruolo");
+        $sorterRuolo->field = "Ruolo";
+        $sorterRuolo->caption = "{RES:Ruolo}";
+        $sorterRuolo->init($this->model);
+        return $sorterRuolo;
+    }
+
+    protected function makeSoterDataAssunzione()
+    {
+        $sorterDataAssunzione = new SorterBootstrap();
+        $sorterDataAssunzione->setName("DataAssunzione");
+        $sorterDataAssunzione->field = "DataAssunzione";
+        $sorterDataAssunzione->caption = "{RES:DataAssunzione}";
+        $sorterDataAssunzione->init($this->model);
+        return $sorterDataAssunzione;
     }
 
     public function open($pk)
     {
-        $_GET["IDTask"] = $pk;
+        $_GET["IDOperaio"] = $pk;
         $this->autorun();
         $this->render();
     }
@@ -152,7 +165,7 @@ class PartPaginatorSorter2 extends Controller
     */
     public function getView()
     {
-        $view = new PartListView("/examples/project/part_paginator_sorter2");
+        $view = new PartListView("/examples/project/part_paginator_sorter3");
         return $view;
     }
 
