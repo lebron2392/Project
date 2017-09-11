@@ -302,7 +302,7 @@ class BeanOperaio extends MySqlRecord implements Bean
      */
     public function close()
     {
-        unset($this);
+        //unset($this);
     }
 
     /**
@@ -366,7 +366,8 @@ class BeanOperaio extends MySqlRecord implements Bean
             $this->id = "";
         }
         // $constants = get_defined_constants();
-        $sql = <<< SQL
+        $sql =
+<<< SQL
             INSERT INTO operaio
             (IDOperaio,Nome,Cognome,Ruolo,DataAssunzione)
             VALUES({$this->parseValue($this->id)},

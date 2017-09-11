@@ -38,9 +38,9 @@ class TaskEdit extends View
         if ($bean->getId() == null) {
             $this->setVar("FormTitle", "{RES:Form}");
             $this->setVar("readonly","readonly");
-        }else  {
-            $this->setVar("FormTitle", "{RES:Form}: ". $bean->getId());
-            $this->setVar("readonly","readonly");
+        }else {
+            $this->setVar("FormTitle", "{RES:Form}: " . $bean->getId());
+            $this->setVar("readonly", "readonly");
         }
 
         $this->setVar("ID",$bean->getId());
@@ -49,5 +49,12 @@ class TaskEdit extends View
         $this->setVar("Operation",$bean->getOperazione());
         $this->setVar("SQuantity",$bean->getQuantitaprogrammata());
         $this->setVar("PQuantity",$bean->getQuantitarealizzata());
+
+        $remaining = $bean->getQuantitaprogrammata() - $bean->getQuantitarealizzata();
+        $this->setVar("RQuantity", $remaining);
+
+        if ($remaining == 0) {
+            $this->setVar("readonlyA", "readonly");
+        }
     }
 }

@@ -1,0 +1,8 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/project/PartList5.txt
+
+SearchFormTitle=Search Order
+IDCommessaLabel=ID Order
+IDCommessaPlaceholder=Insert an ID
+SearchSubmitCaption=Search
+SearchResetCaption=Reset

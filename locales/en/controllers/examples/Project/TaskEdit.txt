@@ -11,10 +11,13 @@ state=Status
 select_value=Select a value
 scheduled=Scheduled Quantity
 produced=Produced Quantity
+remaining=Remaining Quantity
 additional=Additional Quantity
 log=Log
 value1=RUNNING
 value2=STOPPED
 value3=FINISHED
 
-errormsg=There were errors:
+errormsg=Error:
+errormsg2=Additional quantity exceeds the programmed
+errormsg3=The current task is already completed

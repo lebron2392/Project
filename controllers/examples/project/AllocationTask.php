@@ -8,30 +8,24 @@
  * @category Application Controller
  * @author  {AuthorName} - {AuthorEmail}
 */
+namespace controllers\examples\Project;
 
-namespace controllers\examples\project;
 use framework\Controller;
 use framework\Model;
 use framework\View;
 
-use models\examples\project\TaskEdit as PartRecordModel;
-use views\examples\project\TaskEdit as PartRecordView;
-use controllers\examples\cms\NavigationBar;
+use models\examples\Project\AllocationTask as PartRecordModel;
+use views\examples\Project\AllocationTask as PartRecordView;
 use framework\components\Record;
-use models\beans\BeanTask;
+use models\beans\BeanOdl;
 use framework\BeanAdapter;
 
-class TaskEdit extends Controller
+class AllocationTask extends Controller
 {
     protected $view;
     protected $model;
 
-    /**
-    * Object constructor.
-    *
-    * @param View $view
-    * @param Model $mode
-    */
+
     public function __construct(View $view=null, Model $model=null)
     {
         $this->view = empty($view) ? $this->getView() : $view;
@@ -39,26 +33,18 @@ class TaskEdit extends Controller
         parent::__construct($this->view,$this->model);
     }
 
-    /**
-    * Autorun method. Put your code here for running it after object creation.
-    * @param mixed|null $parameters Parameters to manage
-    *
-    */
+
     protected function autorun($parameters = null)
     {
-        // Use application NavigationBar Controller
-        $navigation = new NavigationBar();
-        $navigation->view->loadCustomTemplate("templates/examples/cms/navigation_bar_progetto");
-
-        // Binding child controller NavigationBar
-        $this->bindController($navigation);
+        // Builds select options values
+        $this->model->makeMeausurementUnitCodeList($this->view);
 
         // Creates a record component instance
         $record = new Record();
 
         // Customizes the record components
         $record->setName("PartManagerRecord");
-        $record->registerPkUrlParameter("id");
+        $record->registerPkUrlParameter("IDOperaio");
 
         // Optionals setting
         $record->registerActionName($record::ADD, "aggiungi");
@@ -70,30 +56,20 @@ class TaskEdit extends Controller
         $currentRecord = $record->getCurrentRecord();
 
         // Sets history back for buttons close and delete
-        $historyBack = $record->getControllerHistoryBack("part_paginator_sorter_search2");
+        $historyBack = $record->getControllerHistoryBack("part_list_manager");
         $record->redirectAfterClose = $historyBack;
+        $record->redirectAfterDelete = $historyBack;
 
         // Sets disallow mode
         $record->disallowMode = $record::DISALLOW_MODE_WITH_HIDE;
+        $record->disallowAction(record::UPDATE);
         $record->disallowAction($record::DELETE);
-        $record->disallowAction($record::ADD);
 
         // Creates BeanAclActions, its BeanAdapter and select the
         // current record
-        $bean = new BeanTask();
+        $bean = new BeanOdl();
         $beanAdapter = new BeanAdapter($bean);
         $beanAdapter->select($currentRecord);
-
-        // Disables update if record was not fouund
-        if ($bean->getId() == ""){
-            $record->disallowAction(Record::UPDATE);
-        }
-
-        $remaining = $bean->getQuantitaprogrammata() - $bean->getQuantitarealizzata();
-
-        if ($remaining == 0) {
-            $record->disallowAction(Record::UPDATE);
-        }
 
         // Handles form submission and updates the bean attributes
         // with posted data
@@ -122,11 +98,7 @@ class TaskEdit extends Controller
         $this->view->setFieldsWithBeanData($bean);
 
         // Pocesses record errors
-        if ($remaining != 0) {
-            $this->view->parseErrors($record->getErrors());
-        } else {
-            $this->view->parseErrors(null, "ok");
-        }
+        $this->view->parseErrors($record->getErrors());
 
     }
 
@@ -151,7 +123,7 @@ class TaskEdit extends Controller
     */
     public function getView()
     {
-        $view = new PartRecordView("/examples/project/task_edit");
+        $view = new PartRecordView("/examples/Project/allocation_task");
         return $view;
     }
 

@@ -220,15 +220,15 @@
     // Method 2 - Better (do not change values when reset button is pressed)
     // $("#source option[value={source}]").attr('selected','selected');
 
-    $('input[name=source][value="{source}"]').prop('checked', true);
+
+    if (part_type_code != '')
+        $("#part_type_code option[value={part_type_code}]").attr('selected','selected');$('input[name=source][value="{source}"]').prop('checked', true);
 
     var measurement_unit_code = '{measurement_unit_code}';
     if (measurement_unit_code != '')
         $("#measurement_unit_code option[value={measurement_unit_code}]").attr('selected','selected');
 
     var part_type_code = '{part_type_code}';
-    if (part_type_code != '')
-        $("#part_type_code option[value={part_type_code}]").attr('selected','selected');
 
     var part_category_code = '{part_category_code}';
     if (part_category_code != '')

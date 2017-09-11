@@ -12,3 +12,4 @@ A=Employee Timesheet Search
 B=Task Status Search and Update
 C=Employee Search
 D=Order Search
+E=Task Allocation

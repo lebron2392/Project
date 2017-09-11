@@ -38,7 +38,7 @@
                         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span>
                             <span class="sr-only">Close</span></button>{RES:errormsg}
                         <br/>
-                        <span id="campione_record_inccampioneErrorBlock">{Error}</span> 
+                        <span id="campione_record_inccampioneErrorBlock">{Error}</span>
                     </div>
                     <div class="col-sm-1"></div>
                 </div>
@@ -140,13 +140,25 @@
 
                 <div class="form-group row col-sm-12">
                     <div class="col-sm-4 control-label">
+                        <label class="text-danger">{RES:remaining}</label>
+                    </div>
+                    <div class="col-sm-6 input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-th" aria-hidden="true"></i>
+                        </div>
+                        <input type="text" class="form-control" name="RQuantity" value={RQuantity} required  {readonly}>
+                    </div>
+                </div>
+
+                <div class="form-group row col-sm-12">
+                    <div class="col-sm-4 control-label">
                         <label class="text-danger">{RES:additional}</label>
                     </div>
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-th" aria-hidden="true"></i>
                         </div>
-                        <input type="number" class="form-control" name="AQuantity" value="0" >
+                        <input type="number" class="form-control" name="AQuantity" value="0" required {readonlyA} >
                     </div>
                 </div> 
                 

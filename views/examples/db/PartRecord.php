@@ -53,7 +53,4 @@ class PartRecord extends View
         $this->setVar("wastage",$bean->getWastage());
         $this->setVar("bom_levels",$bean->getBomLevels());
     }
-
-
-
 }

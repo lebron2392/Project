@@ -11,10 +11,13 @@ state=Stato
 select_value=Seleziona un valore
 scheduled=Quantit&agrave Programmata
 produced=Quantit&agrave Realizzata
+remaining=Quantit&agrave Rimanente
 additional=Quantit&agrave Aggiuntiva
 log=Commento
 value1=IN CORSO
 value2=FERMO
 value3=CONCLUSO
 
-errormsg=Ci sono errori:
+errormsg=Errore:
+errormsg2=La quantità addizionale eccede quella programmata
+errormsg3=Il task corrente è già stato completato

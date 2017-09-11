@@ -1,0 +1,9 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/cms/Localization.txt
+
+OrderTitle=Commessa
+Title=Lista Task
+IDTask=ID Task
+Operation=Operazione
+AllParts=Fine Lista Task
+Back=Indietro

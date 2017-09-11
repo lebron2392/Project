@@ -388,19 +388,27 @@ class View
      * @throws VariableNotFoundException If placeholder {Error} was not found
      * @throws NotInitializedViewException If template was not loaded
      */
-    public function parseErrors($errors)
+    public function parseErrors($errors, $parameters = null)
     {
         $this->checkLoadedTpl();
 
-        if  ($errors[0] == "" || !isset($errors)) {
-            $this->hide("ValidationErrors");
-        } else {
+        if ($parameters == "ok") {
             $this->openBlock("ValidationErrors");
-            foreach ($errors as $error) {
-                $this->setVar("Error", $error . "<br/>");
-                $this->parseCurrentBlock();
-            }
+            $this->setVar("Error", "{RES:errormsg3}" . "<br/>");
+            $this->parseCurrentBlock();
             $this->setBlock();
+
+        } else {
+            if  ($errors[0] == "" || !isset($errors)) {
+                $this->hide("ValidationErrors");
+            } else {
+                $this->openBlock("ValidationErrors");
+                foreach ($errors as $error) {
+                    $this->setVar("Error", "{RES:errormsg2}" . "<br/>");
+                    $this->parseCurrentBlock();
+                }
+                $this->setBlock();
+            }
         }
 
     }
