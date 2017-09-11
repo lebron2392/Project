@@ -20,6 +20,8 @@
                         <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search2">{RES:B}</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search3">{RES:C}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search4">{RES:D}</a></li>
                     </ul>
                 </li>
 

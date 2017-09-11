@@ -18,6 +18,7 @@ class TaskList extends View
 
         if ($resultset->num_rows == 0) {
             $this->setVar("IDTask","");
+            $this->setVar("Descrizione","");
             $this->setVar("OraInizio","");
             $this->setVar("OraFine","");
             $this->setVar("Operazione","");
@@ -30,6 +31,7 @@ class TaskList extends View
         } else {
             while ($part = $resultset->fetch_object()) {
                 $this->setVar("IDTask", $part->IDTask);
+                $this->setVar("Descrizione", $part->Descrizione);
                 $this->setVar("OraInizio", $part->OraInizio);
                 $this->setVar("OraFine", $part->OraFine);
                 $this->setVar("Operazione", $part->Operazione);

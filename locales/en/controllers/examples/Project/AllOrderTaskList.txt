@@ -1,0 +1,10 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/cms/Localization.txt
+
+OrderTitle=Order
+Title=Order Summary
+NTotTask=Total Tasks
+QTotProg=Total Scheduled Quantity
+QTotReal=Total Produced Quantity
+AllParts=End Order Summary
+Back=Back

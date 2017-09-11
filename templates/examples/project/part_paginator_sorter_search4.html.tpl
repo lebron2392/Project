@@ -30,14 +30,14 @@
 
                 <div class="form-group col-sm-12">
                     <div class="col-sm-4 control-label">
-                        <label class="text-danger">{RES:IDTaskLabel}</label>
+                        <label class="text-danger">{RES:IDCommessaLabel}</label>
                     </div>
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-tasks" aria-hidden="true"></i>
+                            <i class="fa fa-industry" aria-hidden="true"></i>
                         </div>
-                        <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:IDTaskPlaceholder}" class="form-control">
+                        <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:IDCommessaPlaceholder}" class="form-control">
                     </div>
                 </div>
             </div>
@@ -55,25 +55,19 @@
         </form>
     </div>
 
-
-
     <div class="table table-responsive">
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>{SorterBootstrap:IDTask}</th>
-                <th>{SorterBootstrap:OraInizio}</th>
-                <th>{SorterBootstrap:OraFine}</th>
-                <th>{SorterBootstrap:Operazione}</th>
+                <th>{SorterBootstrap:IDCommessa}</th>
+                <th>{SorterBootstrap:Descrizione}</th>
             </tr>
             </thead>
             <tbody>
             <!-- BEGIN Parts -->
             <tr>
-                <td><a href="task_edit/open/{IDTask}">{IDTask}</a></td>
-                <td>{OraInizio}</td>
-                <td>{OraFine}</td>
-                <td>{Operazione}</td>
+                <td><a href="all_order_task_list?id={IDCommessa}">{IDCommessa}</a></td>
+                <td>{Descrizione}</td>
             </tr>
             <!-- END Parts -->
             </tbody>
@@ -84,7 +78,6 @@
             </tfoot>
         </table>
     </div>
-
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -51,7 +51,7 @@
      
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-th" aria-hidden="true"></i>
+                            <i class="fa fa-tasks" aria-hidden="true"></i>
                         </div>
                         <input type="text" class="form-control" name="ID" value="{ID}" required {readonly}>
                     </div>
@@ -90,7 +90,7 @@
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-th" aria-hidden="true"></i>
+                            <i class="fa fa-cogs" aria-hidden="true"></i>
                         </div>
                         <input type="text" class="form-control" name="Operation" value="{Operation}" required  {readonly}>
                     </div>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-expand" aria-hidden="true"></i>
+                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
                         </div>
                         <select class="form-control" name="Status" id="Status" required >
                             <option value="">{RES:select_value}</option>
@@ -157,7 +157,7 @@
      
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <i class="fa fa-commenting" aria-hidden="true"></i>
                         </div>
                         <input type="text" class="form-control" name="Log" value="">
                     </div>

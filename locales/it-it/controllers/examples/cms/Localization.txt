@@ -11,3 +11,4 @@ Exit=Esci
 A=Cerca Scheda Attivit&agrave Impiegato
 B=Cerca e Modifica Stato Task
 C=Cerca Operaio
+D=Cerca Commessa

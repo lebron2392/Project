@@ -85,7 +85,7 @@ IDCommessa</ColNames>
       <ColNames>IDCommessa</ColNames>
       <RefSchemaName>mrp</RefSchemaName>
       <RefTableName>commessa</RefTableName>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>IDCommessa</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
@@ -124,7 +124,7 @@ child_part_code</ColNames>
       <RefTableName>part</RefTableName>
       <RefColNames>part_code</RefColNames>
     </foreign-key>
-    <column id="49" parent="13" name="ID">
+    <column id="49" parent="13" name="IDCommessa">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -136,7 +136,7 @@ child_part_code</ColNames>
     </column>
     <key id="51" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
+      <ColNames>IDCommessa</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="52" parent="14" name="customer_id">

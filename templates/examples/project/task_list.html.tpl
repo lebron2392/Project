@@ -23,6 +23,7 @@
             <thead>
                 <tr>
                     <th>{RES:IDTask}</th>
+                    <th>{RES:Descrizione}</th>
                     <th>{RES:OraInizio}</th>
                     <th>{RES:OraFine}</th>
                     <th>{RES:Operazione}</th>
@@ -37,6 +38,7 @@
                 <!-- BEGIN Parts -->
                 <tr>
                     <td>{IDTask}</td>
+                    <td>{Descrizione}</td>
                     <td>{OraInizio}</td>
                     <td>{OraFine}</td>
                     <td>{Operazione}</td>

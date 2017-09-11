@@ -1,8 +1,8 @@
 #Comment: Loads translations defined
 #Load:locales/en/controllers/examples/project/PartList3.txt
 
-SearchFormTitle=Search Worker
-IDOperaioLabel=ID Worker
+SearchFormTitle=Search Employee
+IDOperaioLabel=ID Employee
 IDOperaioPlaceholder=Insert an ID
 SearchSubmitCaption=Search
 SearchResetCaption=Reset

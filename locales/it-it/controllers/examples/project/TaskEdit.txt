@@ -16,3 +16,5 @@ log=Commento
 value1=IN CORSO
 value2=FERMO
 value3=CONCLUSO
+
+errormsg=Ci sono errori:

@@ -1,8 +1,10 @@
 #Comment: Loads translations defined
 #Load:locales/en/controllers/examples/cms/Localization.txt
 
-Title=Timesheet
-IDTask=IDTask
+WorkerTitle=Employee
+Title=Employee Activity History
+IDTask=ID Task
+Giorno=Data
 OraInizio=Start Time
 OraFine=Finish Time
 Operazione=Operation
@@ -13,5 +15,5 @@ ErrorLog=Error Log
 Edificio=Building
 Reparto=Department
 Macchinario=Machinery
-AllParts=End Timesheet
+AllParts=End Activity History
 Back=Back

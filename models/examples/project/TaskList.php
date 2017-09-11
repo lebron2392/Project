@@ -13,10 +13,10 @@ class TaskList extends Model
 
         $this->sql =
 <<<SQL
-            SELECT IDTask, OraInizio, OraFine, Operazione, Stato,
-            QuantitaProgrammata, Edificio, Reparto, Macchinario
-            FROM Task
-            WHERE IDODL=$pk
+            SELECT task.IDTask, OraInizio, OraFine, Operazione, Stato,
+            QuantitaProgrammata, Edificio, Reparto, Macchinario, Descrizione
+            FROM task, interessato, prodotto
+            WHERE task.IDTask = interessato.IDTask AND interessato.IDProdotto = prodotto.ID AND IDODL=$pk
 SQL;
         $this->updateResultSet();
     }

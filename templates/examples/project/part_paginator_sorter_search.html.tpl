@@ -35,7 +35,7 @@
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-th" aria-hidden="true"></i>
+                            <i class="fa fa-id-badge" aria-hidden="true"></i>
                         </div>
                         <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:IDOperaioPlaceholder}" class="form-control">
                     </div>
@@ -49,7 +49,7 @@
 
                         <div class="col-sm-6 input-group">
                             <div class="input-group-addon">
-                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                             </div>
                             <div class="form-row show-inputbtns">
                                 <input type="date"  value="{s_date}" name="s_date" id="s_date">

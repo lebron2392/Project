@@ -35,7 +35,7 @@
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-th" aria-hidden="true"></i>
+                            <i class="fa fa-id-badge" aria-hidden="true"></i>
                         </div>
                         <input type="text"  value="{s_id}" name="s_id" id="s_id" placeholder="{RES:IDOperaioPlaceholder}" class="form-control">
                     </div>

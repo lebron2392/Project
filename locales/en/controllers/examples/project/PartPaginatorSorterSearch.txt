@@ -2,7 +2,7 @@
 #Load:locales/en/controllers/examples/project/PartList.txt
 
 SearchFormTitle=Search Work Order
-IDOperaioLabel=ID Worker
+IDOperaioLabel=ID Employee
 IDOperaioPlaceholder=Insert an ID
 Date=Date
 DatePlaceholder=Insert a date

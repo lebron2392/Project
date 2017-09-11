@@ -13,8 +13,8 @@ class AllWorkerTaskList extends Model
 
         $this->sql =
 <<<SQL
-            SELECT IDTask, OraInizio, OraFine, Operazione, Stato, QuantitaProgrammata,
-            QuantitaRealizzata, ErrorLog, Edificio, Reparto, Macchinario
+            SELECT IDTask, Giorno, OraInizio, OraFine, Operazione, Stato, QuantitaProgrammata,
+            QuantitaRealizzata, ErrorLog, Edificio, Reparto, Macchinario, Cognome, Nome
             FROM task, odl, operaio
             WHERE task.IDODL = odl.ID AND odl.IDOperaio = operaio.IDOperaio AND operaio.IDOperaio = $pk
 SQL;

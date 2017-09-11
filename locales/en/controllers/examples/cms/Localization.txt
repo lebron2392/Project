@@ -10,4 +10,5 @@ Exit=Exit
 
 A=Employee Timesheet Search
 B=Task Status Search and Update
-C=Worker Search
+C=Employee Search
+D=Order Search

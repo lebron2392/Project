@@ -2,7 +2,8 @@
 #Load:locales/en/controllers/examples/cms/Localization.txt
 
 Title=Timesheet
-IDTask=IDTask
+IDTask=ID Task
+Descrizione=Product
 OraInizio=Start Time
 OraFine=Finish Time
 Operazione=Operation

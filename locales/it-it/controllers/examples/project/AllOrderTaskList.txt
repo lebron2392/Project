@@ -1,0 +1,10 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/cms/Localization.txt
+
+OrderTitle=Commessa
+Title=Riepilogo Commessa
+NTotTask=N° Totale Task Commessa
+QTotProg=Quantit&agrave Programmata Totale
+QTotReal=Quantit&agrave Realizzata Totale
+AllParts=Fine Riepilogo Commessa
+Back=Indietro

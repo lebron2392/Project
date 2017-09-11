@@ -1,0 +1,8 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/project/PartList4.txt
+
+SearchFormTitle=Ricerca Commessa
+IDCommessaLabel=ID Commessa
+IDCommessaPlaceholder=Inserire un ID
+SearchSubmitCaption=Cerca
+SearchResetCaption=Reset

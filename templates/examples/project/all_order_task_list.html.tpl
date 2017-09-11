@@ -25,7 +25,7 @@
         <div class="panel panel-primary">
 
             <div class="panel-heading">
-                <h1 class="panel-title">{RES:WorkerTitle}</h1>
+                <h1 class="panel-title">{RES:OrderTitle}</h1>
             </div>
 
             <div class="panel-body">
@@ -38,9 +38,9 @@
 
                     <div class="col-sm-6 input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <i class="fa fa-info" aria-hidden="true"></i>
                         </div>
-                        <input type="text" class="form-control" name="IDOp" value="{IDOp}" required readonly>
+                        <input type="text" class="form-control" name="IDOp" value="{IDOr}" required readonly>
                     </div>
                 </div>
         </div>
@@ -55,41 +55,23 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>{RES:IDTask}</th>
-                    <th>{RES:Giorno}</th>
-                    <th>{RES:OraInizio}</th>
-                    <th>{RES:OraFine}</th>
-                    <th>{RES:Operazione}</th>
-                    <th>{RES:Stato}</th>
-                    <th>{RES:QuantitaProgrammata}</th>
-                    <th>{RES:QuantitaRealizzata}</th>
-                    <th>{RES:ErrorLog}</th>
-                    <th>{RES:Edificio}</th>
-                    <th>{RES:Reparto}</th>
-                    <th>{RES:Macchinario}</th>
+                    <th>{RES:NTotTask}</th>
+                    <th>{RES:QTotProg}</th>
+                    <th>{RES:QTotReal}</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- BEGIN Parts -->
                 <tr>
-                    <td>{IDTask}</td>
-                    <td>{Giorno}</td>
-                    <td>{OraInizio}</td>
-                    <td>{OraFine}</td>
-                    <td>{Operazione}</td>
-                    <td>{Stato}</td>
-                    <td>{QuantitaProgrammata}</td>
-                    <td>{QuantitaRealizzata}</td>
-                    <td>{ErrorLog}</td>
-                    <td>{Edificio}</td>
-                    <td>{Reparto}</td>
-                    <td>{Macchinario}</td>
+                    <td>{NTotTask}</td>
+                    <td>{QTotProg}</td>
+                    <td>{QTotReal}</td>
                 </tr>
                 <!-- END Parts -->
             </tbody>
             <tfoot>
                 <tr>
-                    <td class = "text-center" colspan="11">{RES:AllParts} - <a href="part_paginator_sorter_search3">{RES:Back}</a></td>
+                    <td class = "text-center" colspan="11">{RES:AllParts} - <a href="part_paginator_sorter_search4">{RES:Back}</a></td>
                 </tr>
             </tfoot>
         </table>

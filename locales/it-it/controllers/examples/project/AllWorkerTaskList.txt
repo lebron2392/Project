@@ -1,8 +1,10 @@
 #Comment: Loads translations defined
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
-Title=Scheda Attivit&agrave
+WorkerTitle=Impiegato
+Title=Riepilogo Attivit&agrave Impiegato
 IDTask=ID Task
+Giorno=Date
 OraInizio=Ora Inizio
 OraFine=Ora Fine
 Operazione=Operazione
@@ -13,5 +15,5 @@ ErrorLog=Error Log
 Edificio=Edificio
 Reparto=Reparto
 Macchinario=Macchinario
-AllParts=Fine Scheda Attivit&agrave
+AllParts=Fine Riepilogo Attivit&agrave
 Back=Indietro
