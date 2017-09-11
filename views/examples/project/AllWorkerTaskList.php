@@ -37,7 +37,7 @@ class AllWorkerTaskList extends View
                 $this->setVar("Operazione", $part->Operazione);
                 $this->setVar("Stato", $part->Stato);
                 $this->setVar("QuantitaProgrammata", $part->QuantitaProgrammata);
-                $this->setVar("QuantitaRealizzata", $part->QuantitaProgrammata);
+                $this->setVar("QuantitaRealizzata", $part->QuantitaRealizzata);
                 $this->setVar("ErrorLog", $part->Edificio);
                 $this->setVar("Edificio", $part->Edificio);
                 $this->setVar("Reparto", $part->Reparto);
