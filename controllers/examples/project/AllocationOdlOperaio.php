@@ -14,13 +14,14 @@ use framework\Controller;
 use framework\Model;
 use framework\View;
 
-use models\examples\Project\AllocationTask as PartRecordModel;
-use views\examples\Project\AllocationTask as PartRecordView;
+use models\examples\Project\AllocationOdlOperaio as PartRecordModel;
+use views\examples\Project\AllocationOdlOperaio as PartRecordView;
 use framework\components\Record;
 use models\beans\BeanOdl;
 use framework\BeanAdapter;
+use controllers\examples\cms\NavigationBar;
 
-class AllocationTask extends Controller
+class AllocationOdlOperaio extends Controller
 {
     protected $view;
     protected $model;
@@ -36,6 +37,10 @@ class AllocationTask extends Controller
 
     protected function autorun($parameters = null)
     {
+        $navigation = new NavigationBar();
+        $navigation->view->loadCustomTemplate("templates/examples/cms/navigation_bar_progetto");
+        $this->bindController($navigation);
+
         // Builds select options values
         $this->model->makeMeausurementUnitCodeList($this->view);
 
@@ -56,14 +61,13 @@ class AllocationTask extends Controller
         $currentRecord = $record->getCurrentRecord();
 
         // Sets history back for buttons close and delete
-        $historyBack = $record->getControllerHistoryBack("part_list_manager");
+        $historyBack = $record->getControllerHistoryBack("..");
         $record->redirectAfterClose = $historyBack;
-        $record->redirectAfterDelete = $historyBack;
 
         // Sets disallow mode
         $record->disallowMode = $record::DISALLOW_MODE_WITH_HIDE;
-        $record->disallowAction(record::UPDATE);
         $record->disallowAction($record::DELETE);
+        $record->disallowAction($record::UPDATE);
 
         // Creates BeanAclActions, its BeanAdapter and select the
         // current record
@@ -87,7 +91,7 @@ class AllocationTask extends Controller
                 $record->disallowAction(Record::UPDATE);
                 $record->disallowAction(Record::DELETE);
             } else {
-                $record->disallowAction(Record::ADD);
+               $record->disallowAction(Record::ADD);
             }
         };
 
@@ -97,18 +101,9 @@ class AllocationTask extends Controller
         // Set others view fields values with bean data
         $this->view->setFieldsWithBeanData($bean);
 
-        // Pocesses record errors
         $this->view->parseErrors($record->getErrors());
-
     }
 
-
-    public function open($pk)
-    {
-        $_GET["id"] = $pk;
-        $this->autorun();
-        $this->render();
-    }
 
     public function add($dummy)
     {
@@ -123,7 +118,7 @@ class AllocationTask extends Controller
     */
     public function getView()
     {
-        $view = new PartRecordView("/examples/Project/allocation_task");
+        $view = new PartRecordView("/examples/Project/allocation_odl_operaio");
         return $view;
     }
 

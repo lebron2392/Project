@@ -67,9 +67,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: string|time
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $orainizio
      */
     private $orainizio;
@@ -81,9 +81,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: string|time
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $orafine
      */
     private $orafine;
@@ -95,9 +95,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: varchar(20)
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $operazione
      */
     private $operazione;
@@ -109,9 +109,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: varchar(20)
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $stato
      */
     private $stato;
@@ -123,9 +123,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: int(11)
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var int $quantitaprogrammata
      */
     private $quantitaprogrammata;
@@ -137,9 +137,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: int(11)
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var int $quantitarealizzata
      */
     private $quantitarealizzata;
@@ -151,9 +151,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: text
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $errorlog
      */
     private $errorlog;
@@ -165,9 +165,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: text
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $edificio
      */
     private $edificio;
@@ -179,9 +179,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: text
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $reparto
      */
     private $reparto;
@@ -193,9 +193,9 @@ class BeanTask extends MySqlRecord implements Bean
      * Field information:
      *  - Data type: text
      *  - Null : NO
-     *  - DB Index: 
-     *  - Default: 
-     *  - Extra:  
+     *  - DB Index:
+     *  - Default:
+     *  - Extra:
      * @var string $macchinario
      */
     private $macchinario;
@@ -208,8 +208,8 @@ class BeanTask extends MySqlRecord implements Bean
      *  - Data type: int(11)
      *  - Null : NO
      *  - DB Index: MUL
-     *  - Default: 
-     *  - Extra:  
+     *  - Default:
+     *  - Extra:
      * @var int $idodl
      */
     private $idodl;
@@ -229,7 +229,7 @@ class BeanTask extends MySqlRecord implements Bean
      * @category Modifier
      */
 
-    private $quantitaaggiuntiva;
+    private $quantitaaggiuntiva = null;
 
 
     public function setId($id)
@@ -554,10 +554,10 @@ class BeanTask extends MySqlRecord implements Bean
     }
 
     /**
-    * Gets the name of the managed table
-    * @return string
-    * @category Accessor
-    */
+     * Gets the name of the managed table
+     * @return string
+     * @category Accessor
+     */
     public function getTableName()
     {
         return "task";
@@ -569,7 +569,7 @@ class BeanTask extends MySqlRecord implements Bean
      * It creates and initializes an object in two way:
      *  - with null (not fetched) data if none $id is given.
      *  - with a fetched data row from the table task having ID=$id
-     * @param int $id. If omitted an empty (not fetched) instance is created.
+     * @param int $id . If omitted an empty (not fetched) instance is created.
      * @return BeanTask Object
      */
     public function __construct($id = null)
@@ -608,12 +608,12 @@ class BeanTask extends MySqlRecord implements Bean
      */
     public function select($id)
     {
-        $sql =  "SELECT * FROM task WHERE IDTask={$this->parseValue($id,'int')}";
+        $sql = "SELECT * FROM task WHERE IDTask={$this->parseValue($id,'int')}";
         $this->resetLastSqlError();
-        $result =  $this->query($sql);
-        $this->resultSet=$result;
+        $result = $this->query($sql);
+        $this->resultSet = $result;
         $this->lastSql = $sql;
-        if ($result){
+        if ($result) {
             $rowObject = $result->fetch_object();
             @$this->id = (integer)$rowObject->IDTask;
             @$this->orainizio = $rowObject->OraInizio;
@@ -629,7 +629,7 @@ class BeanTask extends MySqlRecord implements Bean
             @$this->idodl = (integer)$rowObject->IDODL;
             $this->allowUpdate = true;
         } else {
-            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+            $this->lastSqlError = $this->sqlstate . " - " . $this->error;
         }
         return $this->affected_rows;
     }
@@ -647,7 +647,7 @@ class BeanTask extends MySqlRecord implements Bean
         $result = $this->query($sql);
         $this->lastSql = $sql;
         if (!$result) {
-            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+            $this->lastSqlError = $this->sqlstate . " - " . $this->error;
         }
         return $this->affected_rows;
     }
@@ -669,23 +669,23 @@ class BeanTask extends MySqlRecord implements Bean
             INSERT INTO task
             (IDTask,OraInizio,OraFine,Operazione,Stato,QuantitaProgrammata,QuantitaRealizzata,ErrorLog,Edificio,Reparto,Macchinario,IDODL)
             VALUES({$this->parseValue($this->id)},
-			{$this->parseValue($this->orainizio,'notNumber')},
-			{$this->parseValue($this->orafine,'notNumber')},
-			{$this->parseValue($this->operazione,'notNumber')},
-			{$this->parseValue($this->stato,'notNumber')},
+			{$this->parseValue($this->orainizio, 'notNumber')},
+			{$this->parseValue($this->orafine, 'notNumber')},
+			{$this->parseValue($this->operazione, 'notNumber')},
+			{$this->parseValue($this->stato, 'notNumber')},
 			{$this->parseValue($this->quantitaprogrammata)},
 			{$this->parseValue($this->quantitarealizzata)},
-			{$this->parseValue($this->errorlog,'notNumber')},
-			{$this->parseValue($this->edificio,'notNumber')},
-			{$this->parseValue($this->reparto,'notNumber')},
-			{$this->parseValue($this->macchinario,'notNumber')},
+			{$this->parseValue($this->errorlog, 'notNumber')},
+			{$this->parseValue($this->edificio, 'notNumber')},
+			{$this->parseValue($this->reparto, 'notNumber')},
+			{$this->parseValue($this->macchinario, 'notNumber')},
 			{$this->parseValue($this->idodl)})
 SQL;
         $this->resetLastSqlError();
         $result = $this->query($sql);
         $this->lastSql = $sql;
         if (!$result) {
-            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+            $this->lastSqlError = $this->sqlstate . " - " . $this->error;
         } else {
             $this->allowUpdate = true;
             if ($this->isPkAutoIncrement) {
@@ -709,31 +709,54 @@ SQL;
         // $constants = get_defined_constants();
         if ($this->allowUpdate) {
 
-            $quantity = $this->quantitarealizzata + $this->quantitaaggiuntiva;
+            if ($this->quantitaaggiuntiva != null) {
 
-            if ($this->quantitaprogrammata >= $quantity) {
-                $sql =
-<<< SQL
+                $quantity = $this->quantitarealizzata + $this->quantitaaggiuntiva;
+
+                if ($this->quantitaprogrammata >= $quantity) {
+                    $sql =
+                        <<< SQL
                     UPDATE
                       task
                     SET 
-				      Stato={$this->parseValue($this->stato,'notNumber')},
+				      Stato={$this->parseValue($this->stato, 'notNumber')},
 				      QuantitaRealizzata={$this->parseValue($quantity)},
-				      ErrorLog={$this->parseValue($this->errorlog,'notNumber')}
+				      ErrorLog={$this->parseValue($this->errorlog, 'notNumber')}
                     WHERE
-                      IDTask={$this->parseValue($id,'int')}
+                      IDTask={$this->parseValue($id, 'int')}
 SQL;
-                $this->resetLastSqlError();
-                $result = $this->query($sql);
-                if (!$result) {
-                    $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+                    $this->resetLastSqlError();
+                    $result = $this->query($sql);
+                    if (!$result) {
+                        $this->lastSqlError = $this->sqlstate . " - " . $this->error;
+                    } else {
+                        $this->select($id);
+                        $this->lastSql = $sql;
+                        return $result;
+                    }
                 } else {
-                    $this->select($id);
-                    $this->lastSql = $sql;
-                    return $result;
+                    $this->lastSqlError = "Error";
                 }
             } else {
-                $this->lastSqlError = "Error";
+                $idODL = $this->idodl;
+                $sql =
+<<< SQL
+                        UPDATE task
+                        SET IDODL={$this->parseValue($idODL)},
+	        			    OraInizio={$this->parseValue($this->orainizio, 'notNumber')},
+	        			    OraFine={$this->parseValue($this->orafine, 'notNumber')}
+                        WHERE
+                            IDTask={$this->parseValue($this->id)}
+SQL;
+                    $this->resetLastSqlError();
+                    $result = $this->query($sql);
+                    if (!$result) {
+                        $this->lastSqlError = $this->sqlstate . " - " . $this->error;
+                    } else {
+                        $this->select($id);
+                        $this->lastSql = $sql;
+                        return $result;
+                    }
             }
         } else {
             return false;

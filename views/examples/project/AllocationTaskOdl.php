@@ -11,9 +11,9 @@
 namespace views\examples\Project;
 
 use framework\View;
-use models\beans\BeanOdl;
+use models\beans\BeanTask;
 
-class AllocationTask extends View
+class AllocationTaskOdl extends View
 {
 
     /**
@@ -24,7 +24,7 @@ class AllocationTask extends View
     public function __construct($tplName = null)
     {
         if (empty($tplName))
-            $tplName = "/examples/Project/part_record";
+            $tplName = "/examples/Project/allocation_task_odl";
         parent::__construct($tplName);
     }
 
@@ -32,11 +32,10 @@ class AllocationTask extends View
      * Update fiellds with bean data
      * @param BeanPart $bean
      */
-    public function setFieldsWithBeanData(BeanOdl $bean)
+    public function setFieldsWithBeanData(BeanTask $bean)
     {
-        //$this->setVar("IDOdl", $bean->getId());
-        $this->setVar("IDOperaio", $bean->getIdoperaio());
-        $this->setVar("id",  $_GET["id"]);
+        //$this->setVar("IDTask", $bean->getId());
+        //$this->setVar("IDOdl", $bean->getIdodl());
     }
 
 

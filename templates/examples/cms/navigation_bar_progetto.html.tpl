@@ -23,7 +23,9 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search4">{RES:D}</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search5">{RES:E}</a></li>
+                        <li><a href="http://localhost/Project/examples/project/allocation_odl_operaio">{RES:E}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="http://localhost/Project/examples/project/allocation_task_odl">{RES:F}</a></li>
                     </ul>
                 </li>
 

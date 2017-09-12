@@ -1,0 +1,16 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/cms/Localization.txt
+
+PartManager=Task Allocation
+FormTitle=Allocation
+IDTask=ID Task
+IDOdl= ID OdL
+IDTaskPlaceholder=Select a task
+IDOdlPlaceholder=Select an OdL
+start=Start Time
+finish=Finish Time
+StartTimePlaceholder=Select a task start time
+FinishTimePlaceholder=Select a task finish time
+
+errormsg=Errore:
+errormsg2=L'operaio selezionato ha già un OdL per il giorno scelto

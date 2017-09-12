@@ -1,0 +1,11 @@
+#Comment: Loads translations defined
+#Load:locales/it-it/controllers/examples/cms/Localization.txt
+
+PartManager=Creazione nuovo Ordine di Lavoro
+FormTitle=Nuovo OdL
+IDOperaio=Operaio
+IDOperaioPlaceholder=Selezionare un operaio
+Date=Giorno
+
+errormsg=Errore:
+errormsg2=L'operaio selezionato ha già un OdL per il giorno scelto

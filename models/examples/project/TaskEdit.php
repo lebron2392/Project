@@ -32,7 +32,6 @@ class TaskEdit extends Model
     */
     protected function autorun($parameters = null)
     {
-
     }
 
 
@@ -42,13 +41,13 @@ class TaskEdit extends Model
      */
     public function setBeanWithPostedData(BeanTask $bean)
     {
-        $bean->setId($_POST["ID"]);
-        $bean->setOrainizio($_POST["StartTime"]);
-        $bean->setOrafine($_POST["FinishTime"]);
-        $bean->setOperazione($_POST["Operation"]);
+        //$bean->setId($_POST["ID"]);
+        //$bean->setOrainizio($_POST["StartTime"]);
+        //$bean->setOrafine($_POST["FinishTime"]);
+        //$bean->setOperazione($_POST["Operation"]);
         $bean->setStato($_POST["Status"]);
-        $bean->setQuantitaprogrammata($_POST["SQuantity"]);
-        $bean->setQuantitarealizzata($_POST["PQuantity"]);
+        //$bean->setQuantitaprogrammata($_POST["SQuantity"]);
+        //$bean->setQuantitarealizzata($_POST["PQuantity"]);
         $bean->setQuantitaaggiuntiva($_POST["AQuantity"]);
         $bean->setErrorlog($_POST["Log"]);
     }

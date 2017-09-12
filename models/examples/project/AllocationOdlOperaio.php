@@ -11,11 +11,11 @@
 namespace models\examples\Project;
 
 use framework\Model;
-use views\examples\Project\AllocationTask as PartRecordView;
+use views\examples\Project\AllocationOdlOperaio as PartRecordView;
 use framework\components\DataRepeater;
 use models\beans\BeanOdl;
 
-class AllocationTask extends Model
+class AllocationOdlOperaio extends Model
 {
 
     /**
@@ -30,23 +30,24 @@ class AllocationTask extends Model
 
     protected function autorun($parameters = null)
     {
-
     }
 
 
     public function makeMeausurementUnitCodeList(PartRecordView $view)
     {
         $workerList = new Model();
-        $workerList->sql= "SELECT IDOperaio as name1, Cognome as name2, Nome as name3 FROM operaio";
+        $workerList->sql= "SELECT distinct(operaio.IDOperaio), operaio.Cognome as name1, operaio.Nome as name2
+                           FROM operaio, odl
+                           WHERE operaio.IDOperaio=odl.IDOperaio";
         $workerList->updateResultSet();
         $list = new DataRepeater($view, $workerList,"IDOperaio_list",null);
         $list->render();
     }
 
+
     public function setBeanWithPostedData(BeanOdl $bean)
     {
-        //$bean->setId($_POST["IDOdl"]);
         $bean->setIdoperaio($_POST["IDOperaio"]);
-
+        $bean->setGiorno($_POST["s_date"]);
     }
 }

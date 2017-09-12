@@ -410,7 +410,6 @@ class View
                 $this->setBlock();
             }
         }
-
     }
 
 }

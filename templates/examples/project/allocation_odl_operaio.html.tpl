@@ -15,9 +15,9 @@
 
 </head>
 <body>
-
+{Controller:examples\cms\NavigationBar}
 <div class="container">
-    <h1>{RES:PartManager} {id}</h1>
+    <h1>{RES:PartManager}</h1>
     <form name="part_record_form" id="part_record_form" method="post" class="form-horizontal">
     
         <div class="panel panel-primary">
@@ -27,6 +27,19 @@
             </div>
 
             <div class="panel-body">
+
+                <!-- BEGIN ValidationErrors -->
+                <div class="form-group col-sm-12">
+                    <div class="col-sm-1"></div>
+                    <div class="alert alert-danger alert-dismissible col-sm-10" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span>
+                            <span class="sr-only">Close</span></button>{RES:errormsg}
+                        <br/>
+                        <span id="campione_record_inccampioneErrorBlock">{Error}</span>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+                <!-- END ValidationErrors -->
 
                 <div class="form-group row col-sm-12">
                     <div class="col-sm-4 control-label">
@@ -39,7 +52,7 @@
                         <select class="form-control" name="IDOperaio" id="IDOperaio" required>
                             <option value="">{RES:IDOperaioPlaceholder}</option>
                             <!-- BEGIN IDOperaio_list -->
-                            <option value="{IDOperaio}">{name1} - {name2} {name3}</option>
+                            <option value="{IDOperaio}">{name1} {name2}</option>
                             <!-- END IDOperaio_list -->
                         </select>
                     </div>
@@ -55,39 +68,13 @@
                             <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                         </div>
                         <div class="form-row show-inputbtns">
-                            <input type="date"  value="{s_date}" name="s_date" id="s_date">
+                            <input type="date"  value="{s_date}" name="s_date" id="s_date" required>
                         </div>
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <div class="col-sm-4 control-label">
-                        <label class="text-danger">{RES:start}</label>
-                    </div>
-
-                    <div class="col-sm-6 input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        </div>
-                        <input type="text" name="StartTime" id="StartTime" placeholder="{RES:StartTime}" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <div class="col-sm-4 control-label">
-                        <label class="text-danger">{RES:finish}</label>
-                    </div>
-
-                    <div class="col-sm-6 input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        </div>
-                        <input type="text" name="FinishTime" id="FinishTime" placeholder="{RES:FinishTime}" class="form-control">
                     </div>
                 </div>
 
             </div>
-     
+
             <div class="panel-footer">
                 <div class="form-group text-center">
                   <label class="col-sm-1 control-label"></label> 
@@ -96,16 +83,20 @@
                   </div>
                 </div>
             </div>
-    
+
         </div>
-        
     </form>
 </div>
+
 <script type="text/javascript">
 
-    var id_operaio = '{IDOperaio}';
-    if (id_operaio != '')
-        $("#id_operaio option[value={IDOperaio}]").attr('selected','selected');
+    var IDOperaio = '{IDOperaio}';
+    if (IDOperaio != '')
+        $("#IDOperaio option[value={IDOperaio}]").attr('selected','selected');
+
+    var IDOdlNew = '{IDOdlNew}';
+    if (IDOdlNew != '')
+        $("#IDOdlNew option[value={IDOdlNew}]").attr('selected','selected');
 
 </script>
 </body>

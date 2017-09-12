@@ -12,4 +12,5 @@ A=Employee Timesheet Search
 B=Task Status Search and Update
 C=Employee Search
 D=Order Search
-E=Task Allocation
+E=New Work Order Creation
+F=Task Allocation

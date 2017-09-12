@@ -255,7 +255,7 @@ class Record extends Component{
         if ($this->record_reset == self::RESET)
             $this->view->setVar(self::RESET,  $this->record_reset);
         if ($this->allowAdd == false)
-            $this->disallowAction(self::ADD);
+         //   $this->disallowAction(self::ADD);
         if ($this->allowUpdate == false)
             $this->disallowAction(self::UPDATE);
         if ($this->allowDelete == false)

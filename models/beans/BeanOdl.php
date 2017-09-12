@@ -57,7 +57,7 @@ class BeanOdl extends MySqlRecord implements Bean
      * A class attribute for evaluating if the table has an autoincrement primary key
      * @var bool $isPkAutoIncrement
      */
-    private $isPkAutoIncrement = false;
+    private $isPkAutoIncrement = true;
 
     /**
      * Class attribute for mapping table field Giorno
@@ -280,29 +280,51 @@ class BeanOdl extends MySqlRecord implements Bean
      */
     public function insert()
     {
+
         if ($this->isPkAutoIncrement) {
             $this->id = "";
         }
-        // $constants = get_defined_constants();
-        $sql = <<< SQL
-            INSERT INTO odl
-            (ID,Giorno,IDOperaio)
-            VALUES({$this->parseValue($this->id)},
-			{$this->parseValue($this->giorno,'notNumber')},
-			{$this->parseValue($this->idoperaio)})
+
+
+        $giorno = $this->parseValue($this->giorno, 'notNumber');
+        $sql1 =
+<<< SQL
+            SELECT *
+            FROM odl
+            WHERE IDOperaio=$this->idoperaio AND Giorno=$giorno
 SQL;
         $this->resetLastSqlError();
-        $result = $this->query($sql);
-        $this->lastSql = $sql;
-        if (!$result) {
-            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
-        } else {
-            $this->allowUpdate = true;
-            if ($this->isPkAutoIncrement) {
-                $this->id = $this->insert_id;
+        $result1 = $this->query($sql1);
+        $this->lastSql = $sql1;
+
+        if ($result1->num_rows == '0') {
+            $sql =
+<<< SQL
+            INSERT INTO odl
+              (Giorno, IDOperaio)
+            VALUES
+              ({$this->parseValue($this->giorno, 'notNumber')},
+			   {$this->parseValue($this->idoperaio)})
+SQL;
+            $this->resetLastSqlError();
+            $result = $this->query($sql);
+            $this->lastSql = $sql;
+
+            if (!$result) {
+               // $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+            } else {
+                $this->allowUpdate = true;
+
+                if ($this->isPkAutoIncrement) {
+                    $this->id = $this->insert_id;
+                }
+
             }
+            return $result;
+        } else {
+            $this->lastSqlError = $this->sqlstate . " - ". $this->error;
+          //  return $result1;
         }
-        return $result;
     }
 
     /**

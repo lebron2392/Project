@@ -1,0 +1,11 @@
+#Comment: Loads translations defined
+#Load:locales/en/controllers/examples/cms/Localization.txt
+
+PartManager=New Work Order Creation
+FormTitle=New Work Order
+IDOperaio=Worker
+IDOperaioPlaceholder=Select a worker
+Date=Date
+
+errormsg=Error:
+errormsg2=Selected worker has alreay a Work Order for the chosen day
