@@ -3,9 +3,9 @@
 
 PartManager=Creazione nuovo Ordine di Lavoro
 FormTitle=Nuovo OdL
-IDOperaio=Operaio
-IDOperaioPlaceholder=Selezionare un operaio
+IDOperaio=Impiegato
+IDOperaioPlaceholder=Selezionare un impiegato
 Date=Giorno
 
 errormsg=Errore:
-errormsg2=L'operaio selezionato ha già un OdL per il giorno scelto
+errormsg2=L'impiegato selezionato ha già un OdL per il giorno scelto

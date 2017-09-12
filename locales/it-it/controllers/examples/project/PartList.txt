@@ -4,4 +4,4 @@
 PartsList=Ricerca Ordini di Lavoro
 ID=ID OdL
 Giorno=Data
-IDOperaio=ID Operaio
+IDOperaio=ID Impiegato

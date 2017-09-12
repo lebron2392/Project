@@ -1,5 +1,6 @@
 #Comment:Translations for controller Localization
-ProjectName=Scheda Attivit&agrave Impiegato
+
+ProjectName=Shop Floor Control
 Contacts=Contattaci
 Setting=Opzioni
 Menu=Menu
@@ -10,7 +11,7 @@ Exit=Esci
 
 A=Cerca Scheda Attivit&agrave Impiegato
 B=Cerca e Modifica Stato Task
-C=Cerca Operaio
+C=Cerca Impiegato
 D=Cerca Commessa
 E=Creazione Nuovo Ordine di Lavoro
 F=Allocazione Task

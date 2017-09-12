@@ -1,8 +1,8 @@
 #Comment: Loads translations defined
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
-PartsList=Ricerca Operaio
-IDOperaio=ID Operaio
+PartsList=Ricerca Impiegato
+IDOperaio=ID Impiegato
 Cognome=Cognome
 Nome=Nome
 Ruolo=Ruolo

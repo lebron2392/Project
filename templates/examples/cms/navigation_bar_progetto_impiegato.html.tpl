@@ -15,13 +15,9 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{RES:Menu} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search3">{RES:C}</a></li>
+                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search">{RES:A}</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search4">{RES:D}</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="http://localhost/Project/examples/project/allocation_odl_operaio">{RES:E}</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="http://localhost/Project/examples/project/allocation_task_odl">{RES:F}</a></li>
+                        <li><a href="http://localhost/Project/examples/project/part_paginator_sorter_search2">{RES:B}</a></li>
                     </ul>
                 </li>
 

@@ -31,7 +31,9 @@ class PartPaginatorSorter2 extends Controller
         $this->model = $this->getModel();
         $this->view = $this->getView();
         parent::__construct($this->view,$this->model);
+
         $navigation = new NavigationBar();
+        $navigation->view->loadCustomTemplate("templates/examples/cms/navigation_bar_progetto_impiegato");
         $this->bindController($navigation);
     }
 

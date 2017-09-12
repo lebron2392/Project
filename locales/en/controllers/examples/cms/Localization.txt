@@ -1,5 +1,6 @@
 #Comment:Translations for controller Localization
-ProjectName=Employee Timesheet
+
+ProjectName=Shop Floor Control
 Contacts=Contact us
 Setting=Settings
 Menu=Menu

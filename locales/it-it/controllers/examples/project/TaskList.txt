@@ -1,7 +1,7 @@
 #Comment: Loads translations defined
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
-Title=Scheda Attivit&agrave
+Title=Ordine di Lavoro
 IDTask=ID Task
 Descrizione=Prodotto
 OraInizio=Ora Inizio

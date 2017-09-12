@@ -1,6 +1,0 @@
-#Comment: Loads translations defined
-#Load:locales/it-it/controllers/examples/cms/Localization.txt
-
-PartsList=Allocazione Task
-IDCommessa=ID Commessa
-Descrizione=Descrizione
