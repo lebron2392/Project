@@ -738,13 +738,12 @@ SQL;
                     $this->lastSqlError = "Error";
                 }
             } else {
-                $idODL = $this->idodl;
                 $sql =
 <<< SQL
                         UPDATE task
-                        SET IDODL={$this->parseValue($idODL)},
-	        			    OraInizio={$this->parseValue($this->orainizio, 'notNumber')},
-	        			    OraFine={$this->parseValue($this->orafine, 'notNumber')}
+                        SET OraInizio={$this->parseValue($this->orainizio, 'notNumber')},
+	        			    OraFine={$this->parseValue($this->orafine, 'notNumber')},
+	        			    IDODL={$this->parseValue($this->idodl, 'int')}
                         WHERE
                             IDTask={$this->parseValue($this->id)}
 SQL;

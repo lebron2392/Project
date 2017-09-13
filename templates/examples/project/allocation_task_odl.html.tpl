@@ -66,10 +66,10 @@
                         <div class="input-group-addon">
                             <i class="fa fa-vcard-o" aria-hidden="true"></i>
                         </div>
-                        <select class="form-control" name="IDODL" id="IDODL" required>
+                        <select class="form-control" name="ID" id="ID" required>
                             <option value="">{RES:IDOdlPlaceholder}</option>
                             <!-- BEGIN IDOdl_list -->
-                            <option value="{IDOdL}">{name3} - {name4}</option>
+                            <option value="{ID}">{name3} - {name4}</option>
                             <!-- END IDOdl_list -->
                         </select>
                     </div>

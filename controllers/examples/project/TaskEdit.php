@@ -48,7 +48,7 @@ class TaskEdit extends Controller
     {
         // Use application NavigationBar Controller
         $navigation = new NavigationBar();
-        $navigation->view->loadCustomTemplate("templates/examples/cms/navigation_bar_progetto");
+        $navigation->view->loadCustomTemplate("templates/examples/cms/navigation_bar_progetto_impiegato");
 
         // Binding child controller NavigationBar
         $this->bindController($navigation);

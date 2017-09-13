@@ -45,7 +45,7 @@ class AllocationTaskOdl extends Model
     public function makeIDOdlList(PartRecordView $view)
     {
         $idOdlList = new Model();
-        $idOdlList->sql= "SELECT ID as name3, Giorno as name4 FROM odl";
+        $idOdlList->sql= "SELECT ID, ID as name3, Giorno as name4 FROM odl";
         $idOdlList->updateResultSet();
         $list = new DataRepeater($view, $idOdlList,"IDOdl_list",null);
         $list->render();
@@ -54,7 +54,7 @@ class AllocationTaskOdl extends Model
     public function setBeanWithPostedData(BeanTask $bean)
     {
         $bean->setId($_POST["IDTask"]);
-        $bean->setIdodl('IDODL');
+        $bean->setIdodl('ID');
         $bean->setOrainizio($_POST["StartTime"]);
         $bean->setOrafine($_POST["FinishTime"]);
     }
