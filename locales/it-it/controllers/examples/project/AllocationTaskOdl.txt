@@ -2,7 +2,7 @@
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
 PartManager=Allocazione Task
-FormTitle=Allocazione
+FormTitle=Allocazione Task
 IDTask=ID Task
 IDOdl= ID OdL
 IDTaskPlaceholder=Selezionare un task

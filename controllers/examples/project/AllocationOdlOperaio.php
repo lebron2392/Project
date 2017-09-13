@@ -61,7 +61,7 @@ class AllocationOdlOperaio extends Controller
         $currentRecord = $record->getCurrentRecord();
 
         // Sets history back for buttons close and delete
-        $historyBack = $record->getControllerHistoryBack("..");
+        $historyBack = $record->getControllerHistoryBack("../../Homepage");
         $record->redirectAfterClose = $historyBack;
 
         // Sets disallow mode

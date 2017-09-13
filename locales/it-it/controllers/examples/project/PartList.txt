@@ -1,7 +1,7 @@
 #Comment: Loads translations defined
 #Load:locales/it-it/controllers/examples/cms/Localization.txt
 
-PartsList=Ricerca Ordini di Lavoro
+PartsList=Ricerca Ordine di Lavoro
 ID=ID OdL
 Giorno=Data
 IDOperaio=ID Impiegato
