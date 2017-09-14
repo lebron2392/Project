@@ -17,6 +17,8 @@ log=Log
 value1=RUNNING
 value2=STOPPED
 value3=FINISHED
+value4=ABORTED
+
 
 errormsg=Error:
 errormsg2=Additional quantity exceeds the programmed

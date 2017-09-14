@@ -109,6 +109,7 @@
                             <option value="RUNNING">{RES:value1}</option>
                             <option value="STOPPED">{RES:value2}</option>
                             <option value="FINISHED">{RES:value3}</option>
+                            <option value="ABORTED">{RES:value4}</option>
 
                         </select>
                     </div>
