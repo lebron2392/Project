@@ -17,6 +17,7 @@ log=Commento
 value1=IN CORSO
 value2=FERMO
 value3=CONCLUSO
+value4=ANNULLATO
 
 errormsg=Errore:
 errormsg2=La quantità addizionale eccede quella programmata
