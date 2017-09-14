@@ -36,7 +36,7 @@ class AllocationTaskOdl extends Model
     public function makeIDTaskList(PartRecordView $view)
     {
         $idTaskList = new Model();
-        $idTaskList->sql= "SELECT IDTask, IDTask as name1, Operazione as name2 FROM task WHERE Stato='NOT ASSIGNED'";
+        $idTaskList->sql= "SELECT IDTask, IDTask as name1, Operazione as name2 FROM task WHERE Stato='UNASSIGNED'";
         $idTaskList->updateResultSet();
         $list = new DataRepeater($view, $idTaskList,"IDTask_list",null);
         $list->render();
