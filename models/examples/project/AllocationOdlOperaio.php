@@ -36,9 +36,8 @@ class AllocationOdlOperaio extends Model
     public function makeMeausurementUnitCodeList(PartRecordView $view)
     {
         $workerList = new Model();
-        $workerList->sql= "SELECT distinct(operaio.IDOperaio), operaio.Cognome as name1, operaio.Nome as name2
-                           FROM operaio, odl
-                           WHERE operaio.IDOperaio=odl.IDOperaio";
+        $workerList->sql= "SELECT distinct(IDOperaio), Cognome as name1, Nome as name2
+                           FROM operaio";
         $workerList->updateResultSet();
         $list = new DataRepeater($view, $workerList,"IDOperaio_list",null);
         $list->render();
