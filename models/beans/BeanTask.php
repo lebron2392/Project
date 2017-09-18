@@ -743,6 +743,7 @@ SQL;
                         UPDATE task
                         SET OraInizio={$this->parseValue($this->orainizio, 'notNumber')},
 	        			    OraFine={$this->parseValue($this->orafine, 'notNumber')},
+	        			    Stato='ASSIGNED',
 	        			    IDODL={$this->parseValue($this->idodl, 'int')}
                         WHERE
                             IDTask={$this->parseValue($this->id)}
